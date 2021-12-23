@@ -1,0 +1,383 @@
+//--------------------------------------------------------------
+// ## General site layout
+//--------------------------------------------------------------
+
+// Jumbotron Hero Header
+//-------------------------------
+@media (max-width: 767px) {
+	.jumbotron {
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+		margin-bottom: 1rem;
+	}
+}
+@media (min-width: 768px) {
+	.jumbotron {
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+		margin-bottom: 2rem;
+	}
+}
+
+
+//--------------------------------------------------------------
+// ## Posts and pages
+//--------------------------------------------------------------
+// #main {
+// 	width: 100%;
+// }
+
+// Blog Index
+//-------------------------------
+.blog #content {
+	margin-top: map-get( $spacers, 5 );
+}
+
+// Featured Image
+.post-thumbnail {
+	& .wp-post-image {
+		border: $entry-image-border;
+	}
+}
+
+// Post title
+.entry-title {
+	& a {
+		color: inherit;
+	}
+}
+
+.byline,
+.updated:not(.published) {
+	display: none;
+}
+
+// End of post meta content
+//-------------------------------
+.entry-footer {
+	border-top: $entry-footer-border-top;
+	border-bottom: $entry-footer-border-bottom;
+
+	& .tricon {
+		fill: lighten($grey-color, 20%);
+	}
+	& a {
+		color: inherit;
+	}
+}
+
+// Author bio/info
+// * Shown if Biographical Info is added in user settings
+//-------------------------------
+#author-info {
+
+	// Gravatar
+	& .avatar {
+		border-radius: 50%;
+		max-width: 110px;
+		max-height: 110px;
+		margin-right: 10px;
+		border: $avatar-border;
+		box-sizing: content-box;
+
+		@media (max-width: 767px) {
+			width: 45px;
+			height: 45px;
+		}
+	}
+}
+// Title
+.author-link {
+	color: inherit;
+}
+
+
+// Multi paged post
+//-------------------------------
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+
+	& a {
+		border: $page-links-border;
+		padding: $page-links-padding;
+		display: inline-block;
+	}
+}
+
+
+//--------------------------------------------------------------
+// ## Cards
+//--------------------------------------------------------------
+.card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	word-wrap: break-word;
+	// background-color: #fff; use bg-white instead
+	background-clip: border-box;
+	border-radius: .25rem;
+	&.has-border {
+		border: 1px solid rgba(0,0,0,.125);
+	}
+}
+.card-body {
+	flex: 1 1 auto;
+	padding: 1.5rem;
+}
+.card-title {
+	margin-bottom: .75rem;
+	color: inherit;
+}
+.card-text p:last-child {
+	margin-bottom: 0;
+}
+.card-img {
+	width: 100%;
+	border-radius: calc(.25rem - 1px);
+}
+
+
+//--------------------------------------------------------------
+// # Post Filterable Grid
+//--------------------------------------------------------------
+@if $use-post-feed == true {
+
+// Post Grid filter
+.filter-anchor {
+	color: $filter-grid_color;
+	cursor: pointer;
+}
+.filter-item.is-checked .filter-anchor,
+.filter-anchor:hover {
+	color: darken( $filter-grid_color, 25% );
+	text-decoration: underline;
+}
+
+// Post Grid Item
+.post-feed-item {
+
+	& .card-title {
+		word-wrap: break-word;
+	}
+	// Post Grid excerpt
+	& .card-text {
+		font-size: 0.9rem;
+	}
+}
+
+// Infinite Scroll Loading Bar
+// #infscr-loading {
+// 	left: 50%;
+// 	width: 200px;
+// 	margin-left: -100px;
+// 	overflow: hidden;
+// 	position: absolute;
+// 	bottom: 0;
+// }
+} // END Filter grid
+
+
+//--------------------------------------------------------------
+// ## Comments
+//--------------------------------------------------------------
+@if $use-blog-comments == true {
+
+// Each individual comment
+.comment-body {
+	margin-bottom: 20px;
+	padding-top: 24px;
+	border-top: $comment-border;
+	word-wrap: break-word !important;
+}
+.comment-list {
+	// Each individual comment container
+	& .comment {
+		list-style: none;
+		padding-left: 0;
+	}
+	& .children {
+		margin-left: 0;
+
+		& .comment-body {
+			margin-bottom: 1.2rem;
+			padding: 1.2rem 1.2rem 1.2rem 80px;
+			border-top-style: dotted;
+		}
+		& .avatar {
+			top: 20px;
+			right: auto;
+			left: -75px;
+		}
+	}
+
+	// vcard
+	& .url {
+		color: inherit;
+	}
+	& .says {
+		color: $comment-says-color;
+	}
+}
+// Avatar
+.comment-author {
+	position: relative;
+
+	& .avatar {
+		position: absolute;
+		right: 0;
+		border-radius: 50%;
+	}
+}
+// metadata
+.comment-metadata {
+	font-size: 0.9rem;
+	padding: 0 0 10px;
+
+	& > a {
+		color: #888;
+	}
+}
+.comment-reply-link,
+.comment-edit-link {
+	color: $link_color;
+}
+.comment-edit-link {
+	margin-left: 5px;
+}
+
+// .bypostauthor {/*!*/} // Requirement by WordPress theme check to be valid
+
+// Cancel reply link
+#cancel-comment-reply-link {
+	float: right;
+	font-size: 0.8rem;
+	font-weight: 400;
+}
+.logged-in-as a {
+	color: inherit;
+}
+
+@media (max-width: 767px) {
+	#comments .children .comment-body {
+		padding: 1rem 0 1rem 55px;
+	}
+	.comment-body {
+		border-top-color: #f1f1f1;
+		margin-bottom: 8px;
+	}
+	#comments {
+		& .avatar {
+			width: 50px;
+			height: 50px;
+		}
+		& .children {
+			padding-left: 12px;
+
+			& .avatar {
+				left: -60px;
+			}
+		}
+	}
+}
+@media (min-width: 768px) {
+	// Make the comment box text fields 3 columns
+	.comment-form-author,
+	.comment-form-email,
+	.comment-form-url {
+		width: 31.65%;
+		float: left;
+		margin-bottom: 25px;
+	}
+	.comment-form-email,
+	.comment-form-url {
+		margin-left: 2.5%;
+	}
+}
+
+} // End if use blog-comments variable check
+
+
+//--------------------------------------------------------------
+// ## Pagination/navigation
+//--------------------------------------------------------------
+.pagination {
+	text-align: center;
+}
+
+.page-numbers {
+	display: inline-block;
+	white-space: nowrap;
+	border: $page-numbers-border;
+	color: contrast($page-numbers-bg);
+	line-height: 1;
+	padding: $page-numbers-padding;
+	background: $page-numbers-bg;
+	border-radius: 2px;
+	margin: 0 0 1.5em 3px;
+	font-size: 0.9rem;
+
+	// Currently active page number
+	&.current {
+		opacity: 1;
+		background-color: $primary-color;
+		border-color: $primary-color;
+		color: contrast($primary-color, 100%);
+	}
+
+	&.dots {
+		border-color: transparent;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	// Previous and next arrow button page numbers
+	&.prev,
+	&.next {
+		border: 0;
+		opacity: 1;
+	}
+	& .tricon {
+		&:hover {
+			opacity: 0.7;
+		}
+		& svg {
+			width: 28px;
+			vertical-align: middle;
+		}
+	}
+}
+a.page-numbers:hover {
+	color: contrast($page-numbers-bg, 100%);
+	border-color: contrast($page-numbers-bg, 100%);
+}
+
+// Single post/Comment arrowed navigation
+.comment-navigation,
+.post-navigation {
+	margin-bottom: 1.5rem;
+
+	.nav-links {
+		display: flex;
+	}
+
+	// Next/Previous anchor container
+	& .nav-previous,
+	& .nav-next {
+		flex-grow: 1;
+		font-size: 0.9rem;
+	}
+	& .nav-next {
+		text-align: right;
+	}
+	// Next/Previous anchor link
+	& a {
+		padding: 8px 0;
+		color: inherit;
+	}
+	// Right/Left arrow
+	& .tricon svg {
+		width: 1.2rem;
+	}
+}

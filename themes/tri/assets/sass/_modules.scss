@@ -1,0 +1,344 @@
+// Spacer Classes
+//-------------------------------
+// Margin auto
+.mt-auto { margin-top: auto }
+.mr-auto { margin-right: auto }
+.mb-auto { margin-bottom: auto }
+.ml-auto { margin-left: auto }
+
+@media (min-width: 768px) {
+	// Margin - all
+	@for $i from 0 through 5 {
+		.m-#{$i} {
+			margin: map-get( $spacers, $i );
+		}
+	}
+	// Margin top
+	@for $i from 0 through 5 {
+		.mt-#{$i} {
+			margin-top: map-get( $spacers, $i );
+		}
+	}
+	// Margin right
+	@for $i from 0 through 5 {
+		.mr-#{$i} {
+			margin-right: map-get( $spacers, $i );
+		}
+	}
+	// Margin bottom
+	@for $i from 0 through 5 {
+		.mb-#{$i} {
+			margin-bottom: map-get( $spacers, $i );
+		}
+	}
+	// Margin left
+	@for $i from 0 through 5 {
+		.ml-#{$i} {
+			margin-left: map-get( $spacers, $i );
+		}
+	}
+
+	// Padding - all
+	@for $i from 0 through 5 {
+		.p-#{$i} {
+			padding: map-get( $spacers, $i );
+		}
+	}
+	// Padding top
+	@for $i from 0 through 5 {
+		.pt-#{$i} {
+			padding-top: map-get( $spacers, $i );
+		}
+	}
+	// Padding right
+	@for $i from 0 through 5 {
+		.pr-#{$i} {
+			padding-right: map-get( $spacers, $i );
+		}
+	}
+	// Padding bottom
+	@for $i from 0 through 5 {
+		.pb-#{$i} {
+			padding-bottom: map-get( $spacers, $i );
+		}
+	}
+	// Padding left
+	@for $i from 0 through 5 {
+		.pl-#{$i} {
+			padding-left: map-get( $spacers, $i );
+		}
+	}
+}
+
+// Margin spacing for mobile only
+@media (max-width: 767px) {
+	// Margin all mobile
+	@for $i from 0 through 5 {
+		.m-sm-#{$i} {
+			margin: map-get( $spacers, $i );
+		}
+	}
+	// Margin top mobile
+	@for $i from 0 through 5 {
+		.mt-sm-#{$i} {
+			margin-top: map-get( $spacers, $i );
+		}
+	}
+	// Margin right mobile
+	@for $i from 0 through 5 {
+		.mr-sm-#{$i} {
+			margin-right: map-get( $spacers, $i );
+		}
+	}
+	// Margin bottom mobile
+	@for $i from 0 through 5 {
+		.mb-sm-#{$i} {
+			margin-bottom: map-get( $spacers, $i );
+		}
+	}
+	// Margin left mobile
+	@for $i from 0 through 5 {
+		.ml-sm-#{$i} {
+			margin-left: map-get( $spacers, $i );
+		}
+	}
+
+	// Padding all mobile
+	@for $i from 0 through 5 {
+		.p-sm-#{$i} {
+			padding: map-get( $spacers, $i );
+		}
+	}
+	// Padding top mobile
+	@for $i from 0 through 5 {
+		.pt-sm-#{$i} {
+			padding-top: map-get( $spacers, $i );
+		}
+	}
+	// Padding right mobile
+	@for $i from 0 through 5 {
+		.pr-sm-#{$i} {
+			padding-right: map-get( $spacers, $i );
+		}
+	}
+	// Padding bottom mobile
+	@for $i from 0 through 5 {
+		.pb-sm-#{$i} {
+			padding-bottom: map-get( $spacers, $i );
+		}
+	}
+	// Padding left mobile
+	@for $i from 0 through 5 {
+		.pl-sm-#{$i} {
+			padding-left: map-get( $spacers, $i );
+		}
+	}
+}
+//--------------------------------------------------------------
+// # Scaffolding - Classes that can be reused to save bloated stylesheets
+// --------------------------------------------------------------
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}
+.aligncenter {
+	display: block !important;
+	margin-left: auto;
+	margin-right: auto;
+}
+@media (max-width: 767px) {
+	img.alignright,
+	img.alignleft { float: none; }
+}
+@media (min-width: 768px) {
+	.alignright {
+		margin-left: 20px;
+	}
+	.alignleft {
+		margin-right: 20px;
+	}
+}
+
+.alignfull {
+	max-width: 100vw;
+	position: relative;
+	left: calc(50% - 50vw);
+	width: 100vw;
+}
+
+.wp-block-cover__inner-container {
+	max-width: 1110px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+// .full-width {
+// 	width: 100vw;
+// 	position: relative;
+// 	left: 50%;
+// 	right: 50%;
+// 	margin-left: -50vw;
+// 	margin-right: -50vw;
+// 	overflow: hidden;
+
+// 	& > .row {
+// 		@media (min-width: 1200px) {
+// 			width: 1140px;
+// 		}
+// 		max-width: 1140px;
+// 		margin-right: auto;
+// 		margin-left: auto;
+// 	}
+// }
+
+// Block Spacing
+.wp-block-cover,
+.wp-block-button,
+.testimonial-slider {
+	margin-bottom: 64px;
+}
+.wp-block-columns {
+	margin-top: 1.5rem;
+}
+.wp-block-columns + .wp-block-button {
+	margin-top: -2rem;
+}
+
+.w-auto {
+	width: auto !important;
+}
+
+// Show element
+//-------------------------------
+.d-block {
+	display: block;
+}
+.d-inline-block {
+	display: inline-block;
+}
+
+// Hide element
+//-------------------------------
+.d-none {
+	display: none;
+}
+
+// Hide an element only on mobile
+@media (max-width: 767px) {
+	.d-sm-none {
+		display: none !important;
+	}
+}
+// Hide an element only on desktop
+@media (min-width: 768px) {
+	.d-md-none {
+		display: none !important;
+	}
+}
+
+// Position Elements
+.position-relative {
+	position: relative !important;
+}
+// Stretch link to fill container. Used in conjunction with position-relative.
+.stretched-link::after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	pointer-events: auto;
+	content: "";
+	background-color: rgba(0, 0, 0, 0);
+}
+
+//--------------------------------------------------------------
+// # Accessibility
+//--------------------------------------------------------------
+// Text meant only for screen readers.
+.screen-reader-text,
+.sr-only {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: $screen-reader-bg;
+		border-radius: 3px;
+		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+		clip: auto !important;
+		color: $screen-reader-color;
+		display: block;
+		font-size: 0.875rem;
+		font-weight: bold;
+		height: auto;
+		left: 5px;
+		line-height: normal;
+		padding: 15px 23px 14px;
+		text-decoration: none;
+		top: 5px;
+		width: auto;
+		z-index: 100000; // Above WP toolbar.
+	}
+}
+
+
+// Hide visually and from screen readers
+.hidden {
+	display: none !important;
+	visibility: hidden;
+}
+
+// Hide visually and from screen readers, but maintain layout
+.invisible {
+	visibility: hidden;
+}
+
+// Make an element unable to be selected
+.unselectable {
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+// must have higher specificity than alternative color schemes inline styles
+.site .skip-link {
+	background-color: $skip-link-bg;
+	box-shadow: $skip-link-shadow;
+	color: $skip-link-color;
+	display: block;
+	left: -9999em;
+	outline: none;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	text-transform: none;
+	top: -9999em;
+
+	// Focus link
+	&:focus {
+		clip: auto;
+		height: auto;
+		left: 6px;
+		top: 7px;
+		width: auto;
+		z-index: 100000;
+	}
+}
+
+// iOS "clickable elements" fix for role="button"
+//
+// Fixes "clickability" issue (and more generally, the firing of events such as focus as well)
+// for traditionally non-focusable elements with role="button"
+// see https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+[role="button"] {
+	cursor: pointer;
+}

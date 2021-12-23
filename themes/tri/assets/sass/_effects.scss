@@ -1,0 +1,200 @@
+@if $use-animations == true {
+
+//--------------------------------------------------------------
+// # Transitions
+//--------------------------------------------------------------
+.transition-2 {
+	transition: all 0.2s ease-out;
+}
+
+//--------------------------------------------------------------
+// # Animations
+//--------------------------------------------------------------
+.show-on-scroll .animate,
+.show-on-scroll.animate {
+	opacity: 0;
+}
+.animate {
+	animation-delay: 0.2s;
+	animation-fill-mode: both;
+	animation-duration: 0.8s;
+
+	// Loop through all delays set in $delays variable.
+	@each $length, $seconds in $delays {
+		&.delay-#{$length} {
+			animation-delay: $seconds;
+		}
+	}
+}
+
+.animate.infinite {
+	animation-iteration-count: infinite;
+}
+
+
+
+// FlipInX
+//-------------------------------
+@keyframes flipInX {
+	0% {
+		opacity: 0;
+		transform: perspective(400px) rotateX(90deg);
+	}
+	100% {
+		opacity: 1;
+		transform: perspective(400px) rotateX(0deg);
+	}
+}
+.has-animated .flipInX,
+.has-animated.flipInX {
+	backface-visibility: visible !important;
+	animation-name: flipInX;
+}
+
+// FlipInY
+//-------------------------------
+@keyframes flipInY {
+	0% {
+		opacity: 0;
+		transform: perspective(400px) rotateY(90deg);
+	}
+	100% {
+		opacity: 1;
+		transform: perspective(400px) rotateY(0deg);
+	}
+}
+.has-animated .flipInY,
+.has-animated.flipInY {
+	backface-visibility: visible !important;
+	animation-name: flipInY;
+}
+
+// FadeIn
+//-------------------------------
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+.has-animated .fadeIn,
+.has-animated.fadeIn {
+	animation-name: fadeIn;
+}
+
+// FadeInUp
+//-------------------------------
+@keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		transform: translate3d(0, 20px, 0);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+.has-animated .fadeInUp,
+.has-animated.fadeInUp {
+	animation-name: fadeInUp;
+}
+
+// FadeInDown
+//-------------------------------
+@keyframes fadeInDown {
+	0% {
+		opacity: 0;
+		transform: translate3d(0, -20px, 0);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+.has-animated .fadeInDown,
+.has-animated.fadeInDown {
+	animation-name: fadeInDown;
+}
+
+// FadeInLeft
+//-------------------------------
+@keyframes fadeInLeft {
+	0% {
+		opacity: 0;
+		transform: translate3d(-20px, 0, 0);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+.has-animated .fadeInLeft,
+.has-animated.fadeInLeft {
+	animation-name: fadeInLeft;
+}
+
+// FadeInRight
+//-------------------------------
+@keyframes fadeInRight {
+	0% {
+		opacity: 0;
+		transform: translate3d(20px, 0, 0);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+.has-animated .fadeInRight,
+.has-animated.fadeInRight {
+	animation-name: fadeInRight;
+}
+
+// BounceIn
+//-------------------------------
+@keyframes bounceIn {
+	0% {
+		opacity: 0;
+		transform: scale(0.3);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+.has-animated .bounceIn,
+.has-animated.bounceIn {
+	animation-name: bounceIn;
+}
+
+// BounceInUp
+//-------------------------------
+@keyframes bounceInUp {
+	0% {
+		opacity: 0;
+		transform: translateY(2000px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+.has-animated .bounceInUp,
+.has-animated.bounceInUp {
+	animation-name: bounceInUp;
+}
+
+// Spin
+//-------------------------------
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+.has-animated .spin,
+.has-animated.spin {
+	animation-name: spin;
+}
+
+} // End if use animations variable check

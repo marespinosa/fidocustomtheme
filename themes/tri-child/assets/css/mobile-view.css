@@ -1,0 +1,667 @@
+
+@media (max-width:1300px){
+	.tri-top-bar .row{
+		width: 30%;
+	}
+	.wp-block-column.hero-image-slider{
+		margin: 0 auto !important;
+	}
+	.hero-item .gform_title{
+		font-size: 20px;
+	}
+	.hero-item .gform_body input{
+		padding: 5px !important;
+	}
+	.hr-bar{
+		position: relative;
+		width: 81.2%;
+		margin: 0 auto;
+	}
+	.Drawer.is-open{
+		width: 38%;
+		padding-bottom: 5%;
+		margin-left: 50px;
+	}
+	.inner-desc-wrap{
+		width: 73%;
+	}
+	
+	.slick-next.slick-arrow{
+		top: 13.35%;
+	}
+	
+	.landingpage #label_5_7_2{
+		margin-top: -2.3%;
+		left: 60%;
+	}
+	
+	.landingpage .wp-block-spacer{
+			height:40px !important;
+	}
+	
+	
+}
+
+@media (max-width:1100px){
+	.tri-top-bar-right {
+		margin-right: 0 !important;
+	}
+	.hr-bar{
+		position: relative;
+		width: 97%;
+		margin: 0 auto;
+	}
+	.column-float-right{
+		margin-left: 60px !important;
+	}
+	.hero-desc{
+		margin-top: 0px;
+	}
+	
+	.hero-desc h1, 
+	.landingpage-title h1, 
+	.page-template-home-page-b  .new-desc h1{
+		font-size: 50px;
+		line-height: 50px;
+	}
+	
+	.hero-desc p, 
+	.landingpage-title p, 
+	.page-template-home-page-b  .new-desc p{
+		font-size: 26px;
+		line-height: 26px;
+	}
+	.hero-desc p span{
+		font-size: 16px;
+		line-height: 35px;
+	}
+	.hero-item .gform_title{
+		margin-bottom: 10px;
+	}
+	#gform_fields_5 .gfield{
+		margin-bottom: 10px;
+	}
+	.Drawer.is-open{
+		margin-left: 40px;
+		width: 40%;
+	}
+
+	#tri-footer .widget{
+		margin-bottom: 0;
+	}
+	.pb-4{
+		padding-bottom: 2em;
+	}
+	
+	.slick-next.slick-arrow{
+		top: 13.8%;
+	}
+	
+	.testimonial-wrapper .wp-block-column{
+		height: 300px;
+	}
+	.testimonial-list-wrapper .slick-slide{
+		height: 290px;
+	}
+	
+	.tri-top-bar .row{
+		width: 35%;
+	}
+	
+	.trusted-lenders h2.has-text-align-center{
+		width: 50%;
+	}
+	
+	.blocks-gallery-grid .blocks-gallery-image, 
+	.blocks-gallery-grid .blocks-gallery-item, 
+	.wp-block-gallery .blocks-gallery-image, 
+	.wp-block-gallery .blocks-gallery-item{margin:0 auto;}
+	
+	
+	.landingpage .wp-block-column:not(:first-child){
+		
+		flex-basis: 35% !important;
+	}
+	
+	.landingpage-title{
+		flex-basis: 28% !important;
+	}
+	.landingpage .gform_title{
+		line-height: 22px;
+	}
+	.landingpage #label_5_7_2{
+		left: 55%;
+	}
+}
+
+
+@media (max-width:920px){
+	.tri-top-bar .row{
+		display:inline-block !important;
+	}
+	.tri-top-bar-right{
+		display: none;
+	}
+	
+	.wp-block-column:nth-child(2n){
+		margin-left: 0;
+	}
+	.col-12, 
+	.col-md{
+		padding-right: 0;
+		padding-left: 0;
+	}
+	.trusted-lenders h2.has-text-align-center{
+		font-size: 25px;
+	}
+	.hero-desc{
+		background-position: 115% 100%;
+		width: 60%;
+	}
+	.inner-desc-wrap{
+		width: 65%;
+	}
+	.Drawer.is-open{
+		background-position:80% 119%;
+		padding: 0;
+		width: 45%;
+	}
+	.inner-desc-wrap{
+		padding-bottom: 15%;
+	}
+	
+	.featured-video-wrapper{
+		display:none;
+	}
+	
+	.testimonial-area .wp-block-column:nth-child(2n){
+		flex-basis: 100% !important;
+		width: 100%;
+		display:inline !important;
+	}
+	.why-fido{
+		margin-top: 0;
+	}
+	
+	.testimonial-list-wrapper .slick-slide{
+		margin: 0 33px;
+	}
+	
+	.slick-next.slick-arrow{
+		top: 11.35%;
+	}
+	.slick-prev.slick-arrow{
+		left: -8%;
+		top: 61px;
+	}
+	.mobile-view-hidden, 
+	.trusted-lenders h2.has-text-align-center,
+	.same-of-our-bar,
+	.carousel-column,
+	.fetch-section figure img{
+		display:none !important;
+	}
+	
+	.hidden-desktop,
+	h2.has-text-align-center.hidden-desktop,
+	.hidden-desktop .same-of-our-bar,
+	.hidden-desktop .carousel-column{
+		display:inline !important;
+	}
+	
+	.why-fido img{
+		object-position: -98% !important
+	}
+	
+	.hr-bar{
+		display:none !important;
+	}
+	
+	.footer-widget-4 a.top-tel-phone:after{
+		left: -12%;
+		top: 0;
+	}
+	a.email-to-bottom:after{
+		left: -11%;
+	}
+	
+	a.top-tel-phone:after{
+		left: -31% !important;
+	}
+	
+	a.top-tel-phone{
+		top: 3px;
+		position: relative;
+	}
+	.slick-prev.slick-arrow{
+		top: 61px;
+	}
+	.page-template-home-page-b .hero-desc{
+		left: 40%;
+	}
+	.page-template-home-page-b .hero-thumbnail img{
+		width: 40%;
+	}
+	.testimonial-wrapper .wp-block-column{
+		width: 90% !important;
+		flex-basis: auto !important;
+		margin: 0 auto;
+	}
+	.testimonial-wrapper .testimonial-list-wrapper{
+		display:none !important;
+	}
+	.container{
+		padding: 0 !important;
+	}
+	
+	#tri-header .tri-top-bar{
+		    right: 0%;
+	}
+	.page-template-home-page-b .hero-desc{
+		top: 0;
+	}
+}
+
+@media (max-width:790px){
+	.landingpage .wp-block-column:first-child,
+	.landingpage .wp-block-spacer{
+		display:none !important;
+	}
+	.landingpage .wp-block-column:nth-child(2n){
+		margin: 0 20px !important;
+	}
+	.wp-block-column{width:100% !important;}
+	.wp-block-column.hero-image-slider{
+		background: #047e97 !important;
+	}
+	
+	.hero-desc{
+		width: 100%;
+		padding-bottom: 0;
+		background: #047e97 !important;
+		z-index: 1;
+	}
+	#applynowbtm{
+		display:none;
+	}
+	
+	.mobile-apply-now{
+		display: inline-block;
+		width: 100%;
+		margin-top: 20px;
+	}
+	
+	.mobile-apply-now p{
+		text-align: left;
+		margin-left: 6%;
+	}
+
+	.inner-desc-wrap{
+		padding-bottom: 0;
+		width: 47%;
+	}
+	
+	.header-fixed #tri-header{
+		z-index: 2;
+	}
+	
+	.column-float-right{
+		margin-left: 15px !important;
+	}
+	
+	
+	.trusted-lenders h2.has-text-align-center{
+		width: 60%;
+	}
+	
+	.slick-prev.slick-arrow{
+		left: 0;
+		top: 68px;
+	}
+	.inner-desc-wrap{
+		padding-top: 3%;
+		margin: 0 6%;
+	}
+	.trusted-lenders h2.has-text-align-center{
+		width: 100%;
+		text-align: center;
+		display: inline-block !important;
+	}
+	.trusted-lenders h2.display-none-h2,
+	.why-fido img,
+	.why-fido-hide-mob{
+		display:none !important;
+	}
+	
+	.wp-block-column:not(:only-child),
+	.wp-block-column:nth-child(2n){
+		flex-basis: 60% !important;
+		margin: 0 auto 20px auto !important;
+	}
+	
+	.testimonial-wrapper .testimonial-list-wrapper{
+		height: 290px;
+	}
+	
+	.subfooter-right{
+		position: relative;
+		left: -30px;
+		margin-top: -12.2em;
+
+	}
+	
+	.general-p br,
+	.why-fido .wp-block-spacer{
+		display:none !important;
+	}
+
+	.how-it-works-col .wp-block-column{
+		padding:0 !important;
+	}
+	
+	.how-it-works-col .entry-content figure{
+		float: left;
+		width: 30%;
+	}
+	
+	.how-it-works-col{
+		margin: 20px auto 0 auto;
+	}
+	
+	.how-it-works-col .has-text-color{
+		width: 71%;
+		float: right;
+	}
+	
+	.entry-content figure{
+		text-align: center !important;
+	}
+	.mobile-menu-active #site-overlay{
+		display: none !important;
+	}
+	
+	#tri-header .container{
+		max-width: 790px;
+	}
+	
+	a.top-tel-phone{
+		left: 20%;
+	}
+	
+	.slick-next.slick-arrow{
+		left: 95%;
+		top: 23.35%;
+	}
+	
+	.Drawer.is-open{
+		background: #047e97 !important;
+		z-index: 1 !important;
+	}
+	
+	.faq-wrappers ul li{
+		width: 98%;
+	}
+	
+	#tri-header .tri-top-bar{
+		right: 0%;
+	}
+	
+	.why-fido img,
+	.why-fido-hide-mob,
+	.hidden-mobile-view-form{
+		display:none;
+	}
+	
+	.why-fido .wp-block-column:nth-child(2n){
+		flex-basis: 90%;
+		margin: 0 auto;
+	}
+	.landingpage .wp-block-column:not(:first-child){
+		flex-basis: 80% !important;
+		margin: 0 auto !important;
+	}
+	
+	 .landingpage .mobile-apply-now{
+		 top: 0 !important;
+	 }
+	 
+	.wp-block-cover.landingpage, 
+	.wp-block-cover-image.landingpage{
+		min-height: auto !important;
+	}
+	
+	.logo-carousel-images .slick-track{
+		height:80px;
+	}
+	
+	.row{
+		margin-right: 0 !important;
+		margin-left: 0 !important;
+	}
+	 
+	 
+}
+
+@media (max-width:690px){
+	.wp-block-columns{
+		margin-bottom: 0;
+	}
+	.subfooter-right{
+		position: relative;
+		left: 0;
+		margin-top: 0;
+	}
+	#mobile-menu-toggle{
+		left: 50%;
+	}
+	.column-float-right{
+		margin-left: 0 !important;
+	}
+	
+	.how-it-works-col img{
+		float: left;
+	}
+	
+	.wp-block-spacer,
+	.fetch-featured-image{
+		display:none !important;
+	}
+	.inner-desc-wrap{
+		padding-top: 3%;
+		margin: 0 auto;
+	}
+	.mobile-apply-now p{
+		text-align: center;
+		margin-left: 0;
+	}
+	
+	#tri-footer .col-12, 
+	#tri-footer .col-md,
+	#custom_html-7{
+		padding-left: 30px;
+	}
+	#menu-sub-footer{
+		margin: 0 auto 20px auto;
+		text-align: left;
+		padding-right: 0;
+	}
+	.footer-widget-4 a.top-tel-phone, 
+	.footer-widget-4 .email-to-bottom{
+		padding-left: 30px;
+	}
+	.footer-widget-4 a.top-tel-phone:after,
+	.footer-widget-4 a.email-to-bottom:after{
+		left: 5%;
+	}
+	.why-fido .wp-block-column,
+	.testimonial-slider{
+		margin-bottom: 0;
+	}
+	#tri-footer .col-md h4{
+		padding-bottom: 0;
+	}
+	#tri-footer .footer-widget-1,
+	#tri-footer .footer-widget-2,
+	#tri-footer .footer-widget-3,
+	#tri-footer .footer-widget-4{
+		margin-bottom:20px;
+	}
+	
+	
+	.tri-top-bar-left{
+		position: relative;
+		right: 28%;
+	}
+	.why-fido{
+		margin-bottom: 0 !important;
+		min-height: auto !important;
+	}
+	.wp-block-column:not(:only-child), 
+	.wp-block-column:nth-child(2n){
+		flex-basis: 90% !important;
+		margin: 0 auto !important;
+	}
+	#gform_wrapper_5{
+		width: 100%;
+	}
+	.no_prefix.has_first_name.no_middle_name.has_last_name.no_suffix .name_first, 
+	.no_prefix.has_first_name.no_middle_name.has_last_name.no_suffix .name_last{
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	#gform_fields_5 .gfield{
+		width: 100%;
+	}
+	.fetch-section .gchoice_5_7_1{
+		width: 20%;
+		float: left;
+	}
+	.fetch-section #label_5_7_2{
+		margin-top: 12px;
+		left: 56px;
+	}
+	.how-it-works-col .wp-block-column{
+		margin-bottom: 20px !important;
+	}
+	
+	#tri-navbar{
+		position: relative;
+		z-index: 5;
+	}
+	
+	.wp-block-column.hero-image-slider{
+		padding-bottom: 50px;
+	}
+	
+	.mobile-menu-active #site-overlay{
+		display: none !important;
+	}
+	#tri-menu a{
+		color: #047E97 !important;
+	}
+	
+	#tri-header .tri-top-bar{
+		right: 12% !important;
+	}
+	.footer-widget-4 a.top-tel-phone:after{
+		left: -12% !important;
+	}
+	.footer-widget-4 a.top-tel-phone{
+		position: relative;
+		left: 2%;
+	}
+	.footer-logo{
+		padding-top: 20px;
+		padding-bottom: 40px;
+	}
+	#custom_html-7{
+		padding-left: 0;
+	}
+	.under-testimonial-btn{
+		display:inline-block !important;
+	}
+	.mobile-apply-now{
+		top: -3em !important;
+		position: relative;
+	}
+	.inner-desc-wrap{
+		padding-bottom: 8%;
+	}
+	.page-template-home-page-b .hero-desc{
+		left: 0;
+	}
+	
+}
+
+@media (max-width:590px){
+	#mobile-menu-toggle{
+		left: 44%;
+	}
+	.inner-desc-wrap{
+		width: 67%;
+	}
+	.slick-next.slick-arrow{
+		left: 90%;
+	}
+	
+}
+
+@media (max-width:490px){
+	#mobile-menu-toggle{
+		left: 30%;
+	}
+	.inner-desc-wrap{
+		width: 80%;
+	}
+	.wp-block-column.hero-image-slider{
+		padding-bottom:80px;
+	}
+	.popUp-box-footer{
+		position: fixed;
+		width: 100%;
+		z-index: 5;
+		top: 95%;
+	}
+}
+
+@media (max-width:390px){
+	.custom-logo{
+		width: 65%;
+	}
+	
+	.tri-top-bar .row{
+		width: 50%;
+	}
+	#tri-header .tri-top-bar{
+		right: 8% !important
+	}
+	
+	#mobile-menu-toggle{
+		left: 8%;
+	}
+	
+	.wp-block-column.hero-image-slider{
+		padding-bottom:100px;
+	}
+	#tri-navbar{
+		padding: 0;
+	}
+	#tri-header .tri-top-bar{
+		top: -1.5em;
+	}
+	
+	.how-it-works-col img{
+		width: 20%;
+	}
+	
+}
+
+@media (max-width:290px){
+	#tri-header .tri-top-bar{
+		display:none !importan;
+	}
+	#mobile-menu-toggle{
+		left: 85%;
+		top: -2.5em;
+	}
+}

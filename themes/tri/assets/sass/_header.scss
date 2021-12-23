@@ -1,0 +1,433 @@
+//--------------------------------------------------------------
+// ## Header
+//--------------------------------------------------------------
+#tri-header {
+	position: relative;
+	z-index: 498;
+	box-shadow: $header-shadow;
+	background: $header-bg;
+
+	// Float header
+	.header-fixed & {
+		position: -webkit-sticky; // Safari 12
+		position: sticky;
+		top: 0;
+		left: 0;
+	}
+}
+
+// Logo
+//-------------------------------
+.custom-logo-link {
+	display: inline-block;
+}
+.custom-logo {
+	max-height: 80px;
+	width: auto;
+}
+
+
+// Header Menu
+//-------------------------------
+#tri-menu {
+	& a:hover,
+	& a:active,
+	& .current-menu-item > a {
+		color: $nav-color-hover;
+	}
+
+	& .menu,
+	& .sub-menu {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+}
+
+// Header search
+//-------------------------------
+#tri-menu #menu-search {
+	height: 100%;
+	width: 24px;
+}
+.menu-search-icon {
+	width: 24px;
+	height: 24px;
+	fill: $nav-search-icon;
+	position: absolute;
+	top: 50%;
+	margin-top: -12px;
+}
+
+// The form that gets shown on click
+#menu-search-form {
+	height: 60px;
+	width: 305px;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	overflow: hidden;
+	margin-top: -30px;
+
+	.search-field {
+		height: 58px;
+	}
+
+	.search-submit:focus {
+		box-shadow: none;
+	}
+}
+
+// Yoast Title Header Breadcrumbs
+//-------------------------------
+#tri-breadcrumbs,
+#tri-breadcrumbs a {
+	font-size: $breadcrumb-font-size;
+	color: $breadcrumb-color;
+}
+
+
+//--------------------------------------------------------------
+// # Mobile only - Tiny devices (mobiles, up to 767px)
+//--------------------------------------------------------------
+@media (max-width: #{$mobile-max-width}) {
+
+	body.mobile-menu-active {
+		overflow: hidden; // prevents horizontal scroll bars
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0); // disable webkit tap highlight
+		// height: 100%; // fixes focus scrolling in Safari (OS X)
+	}
+	.nav-btn {
+		width: 45px;
+		height: 45px;
+		padding: 5px;
+		border: 0;
+		fill: $mobile-nav-btn-color; // For phone/email icon
+		display: inline-block;
+		position: relative;
+
+		&:focus {
+			outline: 0; // Removes the outline on focus
+		}
+		&:hover {
+			fill: lighten( $mobile-nav-btn-color, 15% );
+			background-color: transparent;
+		}
+	}
+	.mobile-call {
+		margin-right: 12px;
+		margin-left: 10px;
+		@include tricon('phone');
+		background-repeat: no-repeat;
+		background-position: center;
+		text-indent: -9999px;
+		opacity: 0.6;
+	}
+
+	#mobile-menu-toggle {
+		background: transparent;
+		text-indent: -9999px;
+		position: relative;
+
+		&::after {
+			content: '';
+			display: block;
+			width: 32px;
+			height: 3px;
+			background: $mobile-nav-btn-color;
+			top: 25%;
+			position: absolute;
+			left: 6px;
+			box-shadow: 0 9px 0 $mobile-nav-btn-color,
+						0 18px 0 $mobile-nav-btn-color;
+		}
+	}
+
+	// Mobile Header
+	//-------------------------------
+	#tri-header {
+		.header-fixed & {
+			background: $mobile-nav-bg;
+		}
+		.scroll-down.header-fixed:not(.mobile-menu-active):not(.scroll-near-top) &{
+			transition: all 0.5s;
+			opacity: 0;
+			// margin-top: -20px !important;
+		}
+		.scroll-up & {
+			opacity: 1;
+			transition: all 0.2s;
+
+		}
+	}
+
+
+	// Mobile Slide out menu
+	//-------------------------------
+	#tri-menu {
+		background: $mobile-nav-bg;
+		position: fixed;
+		width: $mobile-nav-width;
+		max-width: $mobile-nav-max-width;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: 10;
+		border-right: 1px solid darken( $mobile-nav-bg, 10% );
+		font-size: $mobile-nav-font-size;
+		font-weight: 500;
+		overflow: auto;
+		-webkit-overflow-scrolling: touch; // enables momentum scrolling in iOS overflow elements
+		-webkit-transform: translate3d(-100%, 0, 0); // Safari 8
+		transform: translate3d(-100%, 0, 0);
+
+		// active class is toggled to show mobile menu
+		.mobile-menu-active & {
+			-webkit-transform: translate3d(0, 0, 0); // Safari 8
+			transform: translate3d(0, 0, 0);
+		}
+
+		// Offset top if has admin-bar
+		.admin-bar & {
+			top: 46px;
+		}
+
+		// Menu ul
+		& .menu,
+		& .sub-menu {
+			margin: 0;
+		}
+		.menu-item-has-children {
+			position: relative;
+		}
+		.submenu-toggle {
+			position: absolute;
+			right: 0;
+			top: 0;
+			background: transparent center/24px no-repeat !important;
+			@include tricon('expand_more');
+			border: none;
+			height: 45px;
+		}
+		// Menu links
+		& a {
+			display: block;
+			color: $mobile-nav-color;
+			padding: $mobile-nav-anchor-padding;
+			text-decoration: none;
+		}
+	}
+	// Menu Movement - Same % as #tri-menu width.
+	.mobile-menu-active .push-active-menu {
+		-webkit-transform: translate3d(80%, 0, 0); // Safari 8
+		transform: translate3d(80%, 0, 0);
+	}
+	// Menu Transitions
+	#tri-menu,
+	.push-active-menu {
+		transition: transform 0.1s ease-out;
+		// improves performance issues on mobile*/
+		-webkit-backface-visibility: hidden;
+		-webkit-perspective: 1000;
+	}
+
+	// Site Overlay = "close menu" button when menu is active.
+	// It takes up the remaining window space not occupied by menu.
+	#site-overlay {
+		visibility: hidden;
+		opacity: 0;
+		transition: visibility 0s, opacity 0.4s linear;
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 9;
+		cursor: pointer;
+		background: $site-overlay;
+
+		.mobile-menu-active & {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+
+}
+
+//--------------------------------------------------------------
+// # Tablet and larger (tablets, 768px and up)
+//--------------------------------------------------------------
+@media (min-width: #{$mobile-max-width + 1}) {
+
+	// Header - full width expands container to full width
+	//-------------------------------
+	.header-full-width #tri-header .container {
+		max-width: $nav-full-width;
+	}
+
+	// Desktop Drop down menu
+	//-------------------------------
+	#tri-menu {
+
+		// Parent menu
+		& .menu {
+			display: flex;
+			flex-wrap: wrap;
+			margin-bottom: 0;
+		}
+
+		& a {
+			display: block;
+			padding: $nav-anchor-padding;
+			position: relative;
+			text-decoration: none;
+			color: $nav-color;
+			outline: none;
+
+			&:hover,
+			&:focus {
+				color: $nav-color-hover;
+
+				& .menu-search-icon svg {
+					fill: $nav-color-hover;
+				}
+			}
+		}
+		.menu-item:not(.menu-btn) > a::after {
+			position: absolute;
+			top: 95%;
+			left: 0;
+			width: 100%;
+			height: 3px;
+			content: '';
+			opacity: 0;
+			transition: opacity 0.3s, transform 0.3s;
+			transform: translateY(10px);
+			background: $primary-color;
+		}
+		& .menu-item:not(.menu-btn) > a:hover::after,
+		& a:focus::after,
+		& .current-menu-item > a::after {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		// Child menu dropdown
+		//-------------------------------
+		& .sub-menu {
+			position: absolute;
+			left: 0;
+			background: $nav-sub-bg;
+			margin: 0;
+			min-width: 12rem; // allow long menu items to determine submenu width
+			box-shadow: $nav-sub-shadow;
+			z-index: 2;
+			transition: 0.1s 0.1s;
+			visibility: hidden;
+
+			& a {
+				color: $nav-sub-color;
+			}
+		}
+
+		& .sub-menu.on-edge {
+			left: auto !important;
+			right: 100%;
+		}
+
+		// Show child menu on parent hover
+		& .menu-item:hover > .sub-menu,
+		& .menu-item .focus-within ~ .sub-menu,
+		& .menu-item > .sub-menu:hover,
+		& .menu-item > .sub-menu:focus {
+			visibility: visible;
+			transition-delay: 0s;
+			display: block;
+		}
+
+		// Tab focus inner menu items (Must be on own line to work with edge)
+		& .menu-item:focus-within > .sub-menu {
+			visibility: visible;
+		}
+
+		// Grandchild Menu [child child(s)]
+		//-------------------------------
+		& .sub-menu .sub-menu {
+			top: 0;
+			left: 100%;
+			animation: 0;
+			display: none;
+		}
+		// position menu flyout on otherside if menu runs off edge
+		& .edge .sub-menu {
+			left: -100%;
+		}
+		& .menu-item {
+			white-space: nowrap;
+			position: relative;
+		}
+		& .menu > .menu-item-has-children > a {
+			padding-right: 1.4rem;
+
+			&::before {
+				border: solid $nav-color;
+				border-width: 0 2px 2px 0;
+				display: inline-block;
+				padding: 2px;
+				transform: rotate(45deg);
+				content: '';
+				position: absolute;
+				right: 0.9rem;
+				top: 50%;
+				margin-top: -3px;
+				margin-right: -2px;
+			}
+			&:hover::before {
+				border-color: $nav-color-hover;
+			}
+		}
+		.menu-btn {
+			& > a {
+				border-radius: 0.25rem;
+			}
+			&.is-primary > a {
+				color: $btn-color;
+				background-color: $btn-bg;
+				border-color: $btn-bg;
+
+				&:hover {
+					color: $btn-color;
+					background-color: darken($btn-bg, 15%);
+					border-color: darken($btn-bg, 17%);
+				}
+			}
+			// &.is-secondary > a {
+			// 	color: $btn-color-secondary;
+			// 	background-color: $btn-bg-secondary;
+			// 	border-color: $btn-bg-secondary;
+
+			// 	&:hover {
+			// 		color: $btn-color-secondary;
+			// 		background-color: darken( $btn-bg-secondary, 15% );
+			// 		border-color: darken( $btn-bg-secondary, 17% );
+			// 	}
+			// }
+			// &.is-outline > a {
+			// 	border: 1px solid $btn-bg-outline;
+
+			// 	&:hover {
+			// 		color: $btn-color-outline;
+			// 		background-color: $btn-bg-outline;
+			// 		border-color: $btn-bg-outline;
+			// 	}
+			// }
+			// &.rounded-circle > a {
+			// 	border-radius: 2rem;
+			// }
+		}
+	}
+	#nav-btns,
+	.submenu-toggle {
+		display: none;
+	}
+}

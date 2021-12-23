@@ -1,0 +1,75 @@
+// Tabs block
+.tri-tabs {
+	margin: 0 0 1.5em;
+}
+.tri-tab-nav {
+	& span {
+		display: inline-block;
+		cursor: pointer;
+		text-transform: uppercase;
+		font-size: 12px;
+		letter-spacing: 1px;
+		background-color: #f3f3f3;
+		border-bottom: 2px solid #f3f3f3;
+	}
+
+	// Horizontal tabs
+	.tri-tabs.is-horizontal & {
+		overflow: hidden;
+		border-bottom: 1px solid #cbe8ab;
+
+		// The tab title
+		& .tri-tab-nav {
+			& span {
+				padding: 0 1.5rem;
+				border-bottom: 3px solid transparent;
+				line-height: 2.5rem;
+				border-bottom: 2px solid #f3f3f3;
+			}
+			& .is-active,
+			& span:hover {
+				border-bottom-color: #f3f3f3;
+				background-color: #f3f3f3;
+			}
+		}
+	}
+
+	// Vertical tabs
+	// .tri-tabs.is-vertical & {
+	// 	float: left;
+
+	// 	// The tab title
+	// 	& .tri-tab-nav {
+	// 		& span {
+	// 			padding: 0.8rem 1rem 0.8rem 0.5rem;
+	// 			display: block;
+	// 			border-right: 3px solid #f3f3f3;
+	// 			min-width: 100px;
+	// 		}
+	// 		& .is-active,
+	// 		& span:hover {
+	// 			border-right-color: #f3f3f3;
+	// 			background-color: #ebebeb;
+	// 		}
+	// 	}
+	// }
+}
+
+
+// Tabs with icons
+// .tri-tabs.horizontal .tri-tab-nav .tab-icon {
+// 	padding: 20px 20px 10px;
+// }
+
+
+// Tab contents container
+.tri-tab-content {
+	overflow: hidden;
+}
+.tri-tab-pane {
+	padding: 20px 0;
+	display: none; // Default state
+}
+// .is-vertical .tri-tab-pane {
+// 	padding: 0 20px;
+// }

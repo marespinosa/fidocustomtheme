@@ -1,0 +1,40 @@
+//--------------------------------------------------------------
+// ## Footer
+//--------------------------------------------------------------
+#tri-footer {
+	background: $footer-bg;
+	color: $footer-color;
+
+	// Footer anchor links (widgets, subfooter etc)
+	& a {
+		color: inherit;
+	}
+}
+
+// Subfooter
+#subfooter {
+
+	& .container {
+		font-size: 90%;
+	}
+
+	// Horizontal footer menu extension of list-inline
+	& .footer-menu {
+
+		// in between the footer-  list items
+		& li::after {
+			content: '|';
+			padding: 0 5px 0 12px;
+		}
+		// Dont apply to the last one
+		& li:last-child::after {
+			content: '';
+			padding: 0;
+		}
+	}
+}
+
+#tri-attribution::before {
+	content: '|';
+	padding: 0 10px 0 6px;
+}

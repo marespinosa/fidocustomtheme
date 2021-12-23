@@ -1,0 +1,260 @@
+// #Search Box Widget
+// =====================================================================
+.search-form {
+	position: relative;
+
+	label {
+		display: block;
+	}
+}
+
+// search input field
+form .search-field {
+	width: 100%;
+	letter-spacing: 0.05em;
+	box-sizing: border-box;
+	font-size: 1.4em;
+	padding-right: 36px !important;
+}
+
+// search submit btn
+input[type="submit"].search-submit {
+	top: 0;
+	right: 0;
+	border: none;
+	width: 40px;
+	height: 100%;
+	text-indent: -100px;
+	overflow: hidden;
+	background: center/24px no-repeat !important;
+	@include tricon('search');
+	opacity: 0.4;
+	position: absolute;
+	padding: 10px;
+
+	// search submit btn hover
+	&:hover {
+		opacity: 1;
+		background-color: transparent;
+	}
+}
+
+// #Social share buttons
+// =====================================================================
+@if $use-sharebar == true {
+#tri-sharebar {
+	position: fixed;
+	left: 0;
+	z-index: 2;
+
+	// anchor
+	& a {
+		fill: #fff;
+		display: inline-block;
+		height: 50px;
+		width: 50px;
+	}
+}
+@media (max-width: 767px) {
+	// #Social share buttons
+	//-------------------------------
+	#tri-sharebar {
+		bottom: 0;
+		width: 100%;
+		z-index: 9;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+
+		& .share-title {
+			display: inline-block;
+		}
+		& a {
+			overflow: hidden;
+			vertical-align: middle;
+			width: 25%;
+			opacity: 1;
+		}
+		& svg {
+			width: 24px;
+			height: 24px;
+		}
+	}
+	.scroll-down #tri-sharebar {
+		opacity: 1;
+	}
+}
+@media (min-width: 768px) {
+	#tri-sharebar {
+		top: 200px;
+		position: fixed;
+
+		// Share button links
+		& a {
+			display: block;
+			position: relative;
+		}
+		& svg {
+			height: 25px;
+			width: 25px;
+			vertical-align: middle;
+		}
+
+	}
+}
+
+} // End if use share-bar variable check
+
+
+// =====================================================================
+// #widgets
+// =====================================================================
+.widget {
+	width: 100%;
+	word-wrap: break-word;
+
+	a {
+		color: $widget-anchor-color;
+	}
+	& > ul {
+		list-style-type: none;
+		padding: 0;
+	}
+}
+
+.widget-title {
+	color: inherit;
+}
+
+// Sidebar
+// -------------------------------
+#secondary .widget {
+	margin: 0 0 1.5em;
+	clear: both;
+}
+
+// Footer
+// -------------------------------
+#tri-footer .widget {
+	margin-bottom: 1.5rem;
+}
+
+
+// #Contact details widget - (An extension of the tri-list shortcode)
+// =====================================================================
+@if $use-contact-icons == true {
+
+.contact-icons {
+
+	& svg {
+		fill: $contact-icons-color;
+
+
+		#tri-footer & {
+			fill: contrast( $footer-bg, 50% );
+		}
+	}
+}
+
+} // End if use contact-icons variable check
+
+
+
+// #List style Widgets
+// =====================================================================
+.widget_nav_menu,
+.widget_recent_entries,
+.widget_recent_comments,
+.widget_archive,
+.widget_categories,
+.widget_meta {
+	font-size: 0.9rem;
+
+	& ul.menu {
+		list-style: none;
+		padding-left: 0;
+	}
+
+	& li {
+		margin-left: 0;
+		margin-right: 0;
+		padding: 0.1rem 0;
+
+		&:last-child {
+			border-bottom: 0;
+		}
+
+		& a {
+			display: block;
+			padding-top: 0.3rem;
+			padding-bottom: 0.3rem;
+		}
+	}
+}
+
+
+// #Social Icon Buttons Widget
+// =====================================================================
+@if $use-widget-social == true {
+
+.widget-social {
+
+	// anchor
+	& a {
+		display: inline-block;
+		overflow: hidden;
+		padding: 10px;
+	}
+
+	.footer-widgets & svg {
+		fill: contrast( $footer-bg, 100% );
+	}
+	.footer-widgets & a:hover svg {
+		fill: contrast( $footer-bg, 90% );
+	}
+}
+.has-bg {
+	// SVG
+	& svg {
+		fill: #fff;
+	}
+}
+
+} // End if use widget-social variable check
+
+@if $use-widget-social == true or $use-sharebar == true {
+	// Social Icons Background Colours
+	.bg-facebook { background-color: #3b5998; &:hover { background: lighten( #3b5998, 10% ); } }
+	.bg-twitter { background-color: #00aced; &:hover { background: lighten( #00aced, 10% ); } }
+	.bg-linkedin { background-color: #0077b5; &:hover { background: lighten( #0077b5, 10% ); } }
+}
+
+@if $use-widget-social == true {
+	.bg-youtube { background-color: #cd201f; &:hover { background: lighten( #cd201f, 10% ); } }
+	.bg-instagram { background-color: #3f729b; &:hover { background: lighten( #3f729b, 10% ); } }
+	.bg-pinterest { background-color: #cc2127; &:hover { background: lighten( #cc2127, 10% ); } }
+	.bg-email { background-color: #4F97D0; &:hover { background: lighten( #4F97D0, 10% ); } }
+
+	// Additional social profiles. Copy to child style.scss and/or uncomment
+	// .bg-amazon { background-color: #146eb4; &:hover { background-color: lighten(#146eb4, 10%); } }
+	// .bg-behance { background-color: #1769ff; &:hover { background-color: lighten(#1769ff, 10%); } }
+	// .bg-cc-amex { background-color: #002663; &:hover { background-color: lighten(#002663, 10%); } }
+	// .bg-cc-mastercard { background-color: #c00; &:hover { background-color: lighten(#c00, 10%); } }
+	// .bg-cc-paypal { background-color: #012169; &:hover { background-color: lighten(#012169, 10%); } }
+	// .bg-cc-stripe { background-color: #00afe1; &:hover { background-color: lighten(#00afe1, 10%); } }
+	// .bg-cc-visa { background-color: #283890; &:hover { background-color: lighten(#283890, 10%); } }
+	// .bg-dribbble { background-color: #f83; &:hover { background-color: lighten(#f83, 10%); } }
+	// .bg-flickr { background-color: #ff0084; &:hover { background-color: lighten(#ff0084, 10%); } }
+	// .bg-foursquare { background-color: #f94877; &:hover { background-color: lighten(#f94877, 10%); } }
+	// .bg-google { background-color: #4285f4; &:hover { background-color: lighten(#4285f4, 10%); } }
+	// .bg-houzz { background-color: #7ac142; &:hover { background-color: lighten(#7ac142, 10%); } }
+	// .bg-lastfm { background-color: #d51007; &:hover { background-color: lighten(#d51007, 10%); } }
+	// .bg-medium { background-color: #00AB6C; &:hover { background-color: lighten(#00AB6C, 10%); } }
+	// .bg-skype { background-color: #12A5F4; &:hover { background-color: lighten(#12A5F4, 10%); } }
+	// .bg-soundcloud { background-color: #f30; &:hover { background-color: lighten(#f30, 10%); } }
+	// .bg-spotify { background-color: #2ebd59; &:hover { background-color: lighten(#2ebd59, 10%); } }
+	// .bg-tripadvisor { background-color: #589442; &:hover { background-color: lighten(#589442, 10%); } }
+	// .bg-tumblr { background-color: #44546B; &:hover { background-color: lighten(#44546B, 10%); } }
+	// .bg-vimeo { background-color: #1ab7ea; &:hover { background-color: lighten(#1ab7ea, 10%); } }
+	// .bg-whatsapp { background-color: #43d854; &:hover { background-color: lighten(#43d854, 10%); } }
+	// .bg-yelp { background-color: #af0606; &:hover { background-color: lighten(#af0606, 10%); }} }
+}

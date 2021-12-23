@@ -1,0 +1,31 @@
+{
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				".gitignore",
+				"tri.sublime-project",
+				"*.png",
+				"*.svg",
+				"*.txt",
+				"*.css",
+				"*.map"
+			],
+			"folder_exclude_patterns":
+			[
+				"css",
+				"languages",
+				"img",
+				"icons",
+				"fonts",
+				"video"
+			],
+			"path": ".",
+		},
+	],
+	"settings":
+	{
+		"tab_size": 4
+	}
+}

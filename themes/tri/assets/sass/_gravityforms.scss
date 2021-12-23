@@ -1,0 +1,700 @@
+// Gravity Forms custom styles
+// Author: Web3 Brisbane
+// Author URI: http://web3.com.au
+// Original Author: https://github.com/thatryan/gravity-forms-sass
+
+// The MIT License (MIT)
+
+// Copyright (c) 2014 Ryan Olson
+
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
+
+// Adapted for Tri by Web3
+// Wrap the whole css to include conditionally via variables
+@if $use-gravityforms == true {
+
+.ginput_complex,
+.clear-multi,
+.ginput_full,
+.gf_list_2col,
+.gf_list_3col,
+.gf_list_4col,
+.gf_list_5col,
+.gf_list_inline,
+.gf_page_steps,
+.ui-datepicker-header {
+	&::after {
+		clear: both;
+		content: '';
+		display: table;
+	}
+}
+
+.gform_wrapper form {
+	margin-bottom: 1rem;
+}
+
+.gform_heading {
+	padding-bottom: 1rem;
+	border-bottom: 1px solid lighten($form-muted-color, 25%);
+
+	.gform_title {
+		margin-bottom: 1rem;
+	}
+}
+
+.gsection {
+	margin-bottom: 1rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid $form-muted-color;
+
+	.gsection_title {
+		margin-bottom: 1rem;
+		font-size: 20px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		margin: 14px 0;
+	}
+}
+
+.gfield_required {
+	color: $form-required-color;
+	padding-left: 2px;
+}
+
+.gform_body ul {
+	padding: 0;
+}
+
+.ginput_complex label {
+	font-weight: normal;
+}
+
+.gform_fields {
+	margin: 0;
+	list-style: none;
+}
+
+.gfield {
+	margin-bottom: 1rem;
+}
+
+.validation_message {
+	font-style: normal;
+	margin-bottom: -10px;
+	font-size: 0.8rem;
+}
+
+.gfield,
+.gform_footer {
+	clear: both;
+}
+
+// honeypot field, hide it from human beings
+.gform_validation_container {
+	display: none;
+	position: absolute;
+	left: -9000px;
+}
+.gfield_error {
+
+	> label,
+	.validation_message {
+		color: $input-error;
+	}
+
+	input,
+	textarea,
+	select {
+		border-color: $input-error;
+
+		&:focus {
+			border-color: darken($input-error, 10%);
+		}
+	}
+}
+
+
+// Textarea
+//-------------------------------
+textarea {
+	&.small {
+		height: 100px;
+	}
+
+	&.medium {
+		height: 140px;
+	}
+
+	&.large {
+		height: 180px;
+	}
+}
+
+
+// Checkbox, Radio
+//-------------------------------
+.gfield_checkbox,
+.gfield_radio {
+	list-style: none;
+	margin: 0;
+
+	input {
+		margin-right: 4px;
+	}
+}
+
+.gfield_radio {
+	input[type="text"] {
+		width: auto;
+		display: inline-block;
+	}
+}
+
+.ginput_complex {
+	.ginput_left {
+		width: 49%;
+		float: left;
+		clear: left;
+	}
+
+	.ginput_right {
+		width: 49%;
+		float: right;
+		clear: right;
+	}
+}
+
+
+// Name field
+//-------------------------------
+.name_prefix {
+	width: 10%;
+	float: left;
+	margin-right: 1%;
+}
+
+.name_first {
+	width: 39%;
+	float: left;
+	margin-right: 1%;
+}
+
+.name_last {
+	width: 39%;
+	float: left;
+	margin-right: 1%;
+}
+
+.name_suffix {
+	width: 9%;
+	float: right;
+}
+// First and last name only
+.no_prefix.has_first_name.no_middle_name.has_last_name.no_suffix .name_first {
+	width: 49%;
+}
+.no_prefix.has_first_name.no_middle_name.has_last_name.no_suffix .name_last {
+	width: 49%;
+	float: right;
+	margin-right: 0;
+}
+
+// Ready made classes
+//-------------------------------
+.hidden_label .gfield_label,
+.hidden_label .no_prefix.has_first_name.no_middle_name.has_last_name.no_suffix label {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.formbg-white .ginput_container {
+	background: #fff;
+}
+
+.gf_left_half {
+	width: 49%;
+	float: left;
+	clear: left;
+}
+
+.gf_right_half {
+	width: 49%;
+	float: right;
+	clear: right;
+}
+
+.gf_left_third {
+	clear: none;
+	width: 32.5%;
+	float: left;
+	margin-right: 1.25%;
+}
+
+.gf_middle_third {
+	clear: none;
+	width: 32.5%;
+	float: left;
+}
+
+.gf_right_third {
+	clear: none;
+	width: 32.5%;
+	float: right;
+}
+
+.gf_inline {
+	width: 100%;
+	display: inline-block;
+	margin-right: 1%;
+	vertical-align: top;
+}
+
+.gf_list_2col li {
+	width: 50%;
+	float: left;
+}
+
+.gf_list_3col li {
+	width: 33%;
+	float: left;
+}
+
+.gf_list_4col li {
+	width: 25%;
+	float: left;
+}
+
+.gf_list_5col li {
+	width: 20%;
+	float: left;
+}
+
+.gf_list_inline li {
+	display: inline-block;
+	margin-right: 1rem;
+}
+
+.gf_list_height_25 li {
+	height: 25px;
+}
+
+.gf_list_height_50 li {
+	height: 50px;
+}
+
+.gf_list_height_75 li {
+	height: 75px;
+}
+
+.gf_list_height_100 li {
+	height: 100px;
+}
+
+.gf_list_height_125 li {
+	height: 125px;
+}
+
+.gf_list_height_150 li {
+	height: 150px;
+}
+
+.gfield_list {
+	margin: 0;
+
+}
+
+.gfield_list > tbody > tr:nth-child(odd) > td,
+.gfield_list > tbody > tr:nth-child(odd) > th {
+	background: none;
+	line-height: normal;
+	padding: 0;
+	padding-right: 0.2rem;
+	border: 0;
+}
+
+.gfield_list > thead > tr > th {
+	border: 0;
+}
+
+.gf_scroll_text {
+	padding: 12px;
+	border: 1px solid #cecece;
+	height: 180px;
+	overflow: auto;
+
+	p:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
+.gf_hide_ampm {
+	.gfield_time_ampm {
+		display: none;
+	}
+}
+
+.gf_hide_charleft {
+	.charleft {
+		display: none;
+	}
+}
+
+
+@media only screen and (min-width: 768px) { // Tablet and larger (tablets, 768px and up)
+
+	// Optin form (inline submit button) http://tri.net/documentation/#ready-made-gravityforms
+	.inline-optin-form {
+		// Make form container relative for positioning
+		position: relative;
+
+		& .gform_body {
+			width: 69%; // Take 1% away for a gap between button and input
+		}
+		// Resize and position form with footer button
+		& .gform_footer {
+			width: 30%;
+			position: absolute;
+			top: 0;
+			right: 0;
+			padding: 0;
+			margin: 0;
+
+			& input {
+				font-size: 1rem;
+			}
+		}
+
+		& .gform_button {
+			width: 100%;
+		}
+	}
+
+	.gf_inline {
+		width: auto;
+	}
+}
+
+
+// File upload
+//-------------------------------
+.gform_drop_area {
+	padding: 10px;
+	border: 1px dashed $grey-color;
+}
+.ginput_container_fileupload + .gfield_description {
+	margin-top: 12px;
+}
+
+// Date/time
+//-------------------------------
+input.datepicker_with_icon {
+	margin-right: 1rem;
+	display: inline-block;
+	width: auto;
+}
+
+.gfield_date_month,
+.gfield_date_dropdown_month,
+.gfield_date_day,
+.gfield_date_dropdown_day {
+	display: inline-block;
+	width: auto;
+	margin-right: 1%;
+}
+
+.gfield_date_year,
+.gfield_date_dropdown_year {
+	display: inline-block;
+	width: auto;
+}
+
+.clear-multi {
+	display: flex;
+}
+.ginput_container_time {
+	width: 32.65%;
+}
+.gfield_time_hour {
+	margin-right: 1%;
+
+	i {
+		display: none;
+	}
+}
+
+.gfield_time_minute {
+	margin-right: 1%;
+}
+.datepicker_with_icon.hasDatepicker {
+	width: 90%;
+	display: inline-block;
+}
+.ui-datepicker-trigger {
+	cursor: pointer;
+}
+.ui-datepicker {
+	background: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	padding: 15px 12px 0;
+}
+
+.ui-state-default,
+html .ui-button.ui-state-disabled:hover,
+html .ui-button.ui-state-disabled:active {
+    font-weight: normal;
+    display: block;
+    padding: 3px 6px;
+}
+
+.ui-state-default {
+    color: #454545;
+	border-radius: 3px;
+
+    .ui-state-disabled & {
+    	color: #888;
+    }
+}
+
+.ui-state-hover {
+	background: #ededed;
+	text-decoration: none !important;
+	color: initial;
+}
+
+.ui-state-highlight {
+    background: #FFD;
+}
+.ui-state-active {
+    border: 1px solid darken($primary-color, 2%);
+    background: $primary-color;
+    font-weight: normal;
+    color: #fff;
+    cursor: default;
+}
+
+
+
+.ui-datepicker-calendar {
+	margin: 1rem 0;
+	min-width: 230px;
+
+	& a {
+		text-align: center;
+	}
+}
+
+.ui-datepicker-header .ui-icon {
+	text-indent: -99999px;
+	overflow: hidden;
+	display: block;
+}
+
+.ui-datepicker-header a {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 28px;
+	height: 50px;
+	line-height: 1.5rem;
+	cursor: pointer;
+
+	&:hover {
+		opacity: 0.6;
+	}
+}
+
+.ui-datepicker-prev {
+	width: 15%;
+	float: left;
+	background-image: url("../tri/assets/img/material/chevron_left.svg");
+}
+
+.ui-datepicker-next {
+	width: 15%;
+	float: right;
+	background-image: url("../tri/assets/img/material/chevron_right.svg");
+}
+
+.ui-datepicker-title {
+	width: 70%;
+	float: left;
+	padding: 0 5px;
+	text-align: center;
+	margin-top: 8px;
+
+	select {
+		width: 49%;
+		min-width: 65px;
+		padding: 5px;
+		display: inline-block;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+	.ui-datepicker-year {
+		margin-left: 2%;
+	}
+	option {
+		padding: 4px;
+	}
+}
+.ui-datepicker-today a {
+	color: $dark-color;
+}
+
+
+// Multi-page forms
+//-------------------------------
+.gf_page_steps {
+	margin-bottom: 1rem;
+	line-height: 1;
+}
+
+.gf_step {
+	display: inline-block;
+	opacity: 0.2;
+	margin-right: 1%;
+
+	&:last-of-type {
+		margin-right: 0;
+	}
+}
+
+.gf_step_active {
+	opacity: 1;
+}
+
+.gf_step_number {
+	font-weight: bold;
+	font-size: 150%;
+}
+
+// Progress Bar
+.gf_progressbar_wrapper {
+	clear: both;
+	margin: 0 0 0.5rem;
+	padding: 0 0 30px;
+}
+.gf_progressbar_title {
+	font-size: 0.9rem;
+	margin-bottom: 10px;
+	text-align: center;
+	color: $grey-color;
+}
+.gf_progressbar {
+	width: 100%;
+	height: 20px;
+	overflow: hidden;
+	line-height: 20px;
+	background-color: rgba(0, 0, 0, 0.1);
+	border-radius: 20px;
+}
+.gf_progressbar_percentage {
+	height: 20px;
+	text-align: right;
+	font-family: helvetica, arial, sans-serif;
+	font-size: 13px;
+	display: block;
+	border-radius: 20px;
+	padding-right: 4px;
+	overflow: hidden;
+	background-color: $primary-color;
+}
+
+.gf_progressbar_percentage span {
+	display: block;
+	width: auto;
+	float: right;
+	margin: 0 10px;
+	line-height: 1.4;
+	font-weight: 500;
+	color: #fff;
+}
+.gf_progressbar_percentage.percentbar_0 span {
+	color: #959595;
+	text-shadow: none;
+}
+
+.gform_previous_button {
+	margin-right: 20px;
+}
+.gform_previous_button,
+.gform_next_button {
+	margin-bottom: 30px;
+}
+
+// Credit Card Form
+//-------------------------------
+.ginput_card_expiration_container,
+.ginput_cardinfo_right {
+	margin: 20px 0;
+	display: block;
+}
+.gform_card_icon {
+	display: none;
+}
+
+.ginput_card_expiration {
+	height: 50px;
+	display: inline-block;
+}
+.ginput_card_expiration_month {
+	width: 48%;
+	margin-right: 2.6%;
+}
+.ginput_card_expiration_year {
+	width: 48%;
+}
+
+.gform_card_icon_container {
+	display: none;
+}
+
+.ginput_card_expiration_container {
+	width: 66%;
+	float: left;
+
+	select {
+		width: 48% !important;
+		float: left;
+
+		&:first-child {
+			margin-right: 4%;
+		}
+	}
+}
+
+.ginput_cardinfo_right {
+	float: left;
+	width: 30%;
+	margin-left: 4%;
+}
+
+.ginput_cardinfo_left {
+	clear: both;
+	overflow: hidden;
+}
+
+.ginput_card_security_code_icon {
+	display: none;
+}
+
+} // End if use gravity forms variable check

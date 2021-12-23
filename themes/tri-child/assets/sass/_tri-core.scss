@@ -1,0 +1,55 @@
+/*
+ * This is an exact copy of the Tri Parent style.scss file.
+ * The difference is it doesnt include the compulsary header comments.
+ * That way we can import it using the child theme and
+ * the filesize will be that tiny bit smaller.
+ * It also means we can overwrite the styles using variables!
+ */
+// Icon directory location to inherit parent icons
+$icondir: '../tri/assets/img/material/';
+
+$use-media-gallery:	true; // Standard WP media gallery for Tri
+$use-blog-comments:	true; // Blog comments for Tri
+$use-contact-icons:	true; // tri.web3.com.au/docs/#contact-info
+$use-share-bar:		true; // Tri Share page social links
+$use-widget-social:	true; // tri.web3.com.au/docs/#social-icon
+$use-animations:	true; // tri.web3.com.au/docs/#animations
+$use-gravityforms:	true; // Gravity Forms styles
+$use-woocommerce:	true; // Additional WooCommerce Styles for Tri
+$use-magnificpopup:	true; // Magnific Popup styles
+
+$use-video-background:	true; // tri.web3.com.au/docs/#section
+$use-icon-tile:			true; // Icon Tiles
+$use-quote:				true; // tri.web3.com.au/docs/#quote
+$use-testimonial:		true; // tri.web3.com.au/docs/#testimonial
+$use-count-up:			true; // tri.web3.com.au/docs/#count-up
+$use-accordion:			true; // tri.web3.com.au/docs/#accordion
+$use-banner:			true; // tri.web3.com.au/docs/#banner
+$use-tabs:				true; // tri.web3.com.au/docs/#tabs
+$use-list-icons:		true; // tri.web3.com.au/docs/#list
+$use-google-maps:		true; // tri.web3.com.au/docs/#map
+$use-post-feed:			true; // tri.web3.com.au/docs/#postgrid
+$use-read-more:			true; // Read more shortcode
+$use-responsive-embed:	true; // tri.web3.com.au/docs/#video
+$use-tabs:				true; // tri.web3.com.au/docs/#tabs
+
+
+// Tri Parent theme assets
+@import "../../../tri/assets/sass/mixins";
+@import "../../../tri/assets/sass/variables";
+@import "../../../tri/assets/sass/normalize";
+
+@import "../../../tri/assets/sass/type";
+@import "../../../tri/assets/sass/grid";
+@import "../../../tri/assets/sass/elements";
+@import "../../../tri/assets/sass/header";
+@import "../../../tri/assets/sass/content";
+@import "../../../tri/assets/sass/widgets";
+@import "../../../tri/assets/sass/media";
+@import "../../../tri/assets/sass/forms";
+@import "../../../tri/assets/sass/gravityforms";
+@import "../../../tri/assets/sass/footer";
+@import "../../../tri/assets/sass/woocommerce";
+@import "../../../tri/assets/sass/effects";
+@import "../../../tri/assets/sass/magnificpopup";
+@import "../../../tri/assets/sass/modules";

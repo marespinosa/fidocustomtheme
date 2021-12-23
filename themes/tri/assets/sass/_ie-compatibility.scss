@@ -1,0 +1,11 @@
+/* IE10+ specific styles to help make IE work better */
+
+@if $use-ie-helper == true {
+
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+		#tri-menu {
+			margin-left: 30px;
+		}
+	}
+
+}

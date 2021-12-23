@@ -1,0 +1,343 @@
+// Label/legend
+//-------------------------------
+legend,
+label {
+	font-size: 80%;
+	letter-spacing: 1px;
+	margin-bottom: 2px;
+	display: inline-block;
+}
+label {
+	font-weight: 300;
+	color: $form-label-color;
+}
+
+// Fieldset
+//-------------------------------
+fieldset {
+	margin-bottom: 20px;
+}
+
+// Reset fonts for relevant elements
+input,
+button,
+select,
+textarea {
+	line-height: inherit;
+	box-sizing: border-box;
+}
+
+// Generic styles applying to most form fields
+//-------------------------------
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="search"],
+input[type="tel"],
+input[type="number"],
+input[type="url"],
+input[type="file"],
+input[type="submit"],
+textarea,
+select {
+	box-shadow: none;
+	transition: all 0.3s;
+	font-size: $input-font-size;
+	line-height: normal;
+	padding: 1rem;
+	color: $input-color;
+	border: 1px solid $input-border-color;
+	border-radius: 3px;
+	display: block;
+	width: 100%;
+
+	// Focus state
+	&:focus {
+		outline: none;
+		border-color: $input-border-color-focus;
+	}
+}
+input[type="submit"] {
+	width: auto;
+}
+
+
+// WebKit-style focus
+// @link https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_tab-focus.scss [props]
+input[type="checkbox"],
+input[type="radio"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+	&:focus {
+		outline: thin dotted;
+		outline: 5px auto -webkit-focus-ring-color;
+		outline-offset: -2px;
+	}
+}
+
+input[type="file"] {
+	&:hover { cursor: pointer; }
+}
+
+
+// Override webkit form-filling
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0 1000px #fff inset;
+}
+
+// Textarea
+//-------------------------------
+textarea {
+	min-height: 60px;
+}
+
+// Select box
+//-------------------------------
+select {
+    background-image: linear-gradient(45deg, transparent 50%, rgba(0,0,0,0.2) 50%), linear-gradient(135deg, rgba(0,0,0,0.2) 50%, transparent 50%);
+    background-position: calc(100% - 20px) calc(1em + 8px), calc(100% - 12px) calc(1rem + 8px);
+    background-size: 8px 8px;
+    background-repeat: no-repeat;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+select[multiple],
+select[size] {
+	height: auto;
+}
+option {
+	padding: 3px 5px;
+}
+
+// Checkbox and Radio
+//-------------------------------
+input[type="checkbox"],
+input[type="radio"] {
+	width: auto;
+	display: inline-block;
+}
+
+// Form Buttons
+//-------------------------------
+.wp-block-button__link {
+	box-shadow: none;
+	color: inherit;
+	cursor: pointer;
+	display: inline-block;
+	margin: 0;
+	text-decoration: none;
+	overflow-wrap: break-word;
+	padding: 1rem 1.5rem;
+	font-size: 1rem;
+	line-height: 1.25;
+	border-radius: 0.25rem;
+
+	&:active,
+	&:focus,
+	&:hover,
+	&:visited {
+		color: inherit;
+	}
+}
+
+button,
+.button,
+.wp-block-button .wp-block-button__link,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	display: inline-block;
+	font-weight: normal;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border: 1px solid transparent;
+	cursor: pointer;
+	transition: background-color 0.15s ease-in-out,
+				border-color 0.15s ease-in-out,
+				box-shadow 0.15s ease-in-out;
+
+	&:focus,
+	&:hover {
+		text-decoration: none;
+	}
+
+	&:focus {
+		outline: 0;
+		box-shadow: $btn-focus-shadow;
+	}
+
+	&:disabled {
+		opacity: .65;
+		cursor: not-allowed;
+	}
+
+	&:active {
+		background-image: none;
+	}
+}
+
+// Button Primary
+.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.wp-block-button.is-style-fill .wp-block-button__link {
+	color: $btn-color;
+	background-color: $btn-bg;
+	border-color: $btn-bg;
+
+	&:hover {
+		color: $btn-color;
+		background-color: $btn-hover-bg;
+		border-color: $btn-hover-bg;
+	}
+
+	&:disabled {
+		background-color: $btn-bg;
+		border-color: $btn-bg;
+	}
+
+	&:active {
+		background-color: $btn-hover-bg;
+		background-image: none;
+		border-color: $btn-hover-bg;
+	}
+	// Icon color matches button text color
+	& .tricon {
+		fill: $btn-color;
+	}
+}
+
+// Button colors need to match what is set in tri-child functions.php
+.has-primary-color { color: $primary-color; }
+.has-secondary-color { color: $secondary-color; }
+
+.is-style-fill {
+	.has-primary-background-color { background-color: $primary-color; }
+	.has-secondary-background-color { background-color: $secondary-color; }
+}
+
+.is-style-outline {
+	.wp-block-button__link {
+		background-color: transparent;
+		border: 2px solid;
+	}
+	.has-primary-background-color { border-color: $primary-color; }
+	.has-secondary-background-color { border-color: $secondary-color; }
+}
+
+
+// Button Secondary
+// .wp-block-button.is-style-fill .wp-block-button__link {
+// 	color: $btn-color-secondary;
+// 	background-color: $btn-bg-secondary;
+// 	border-color: $btn-bg-secondary;
+
+// 	&:hover {
+// 		color: $btn-color-secondary;
+// 		background-color: darken( $btn-bg-secondary, 10% );
+// 		border-color: darken( $btn-bg-secondary, 12% );
+// 	}
+
+// 	&:focus,
+// 	&.focus {
+// 		box-shadow: 0 0 0 3px rgba(134, 142, 150, 0.5);
+// 	}
+
+// 	&.disabled,
+// 	&:disabled {
+// 		background-color: #868e96;
+// 		border-color: #868e96;
+// 	}
+
+// 	&:active,
+// 	&.active {
+// 		background-color: darken( $btn-bg-secondary, 10% );
+// 		background-image: none;
+// 		border-color: darken( $btn-bg-secondary, 12% );
+// 	}
+// }
+
+// Button Outline
+.wp-block-button.is-style-outline .wp-block-button__link {
+	color: $btn-bg-outline;
+	background-color: transparent;
+	background-image: none;
+	border-color: $btn-bg-outline;
+
+	&:hover {
+		color: $btn-color-outline;
+		background-color: $btn-bg-outline;
+		border-color: $btn-bg-outline;
+	}
+
+	&:focus {
+		box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+	}
+
+	&:disabled {
+		color: $btn-bg-outline;
+		background-color: transparent;
+	}
+
+	&:active {
+		color: $btn-color-outline;
+		background-color: $btn-bg-outline;
+		border-color: $btn-bg-outline;
+	}
+}
+
+// Button Sizes
+.btn-sm {
+	padding: 0.75rem 1rem;
+	font-size: 0.875rem;
+	line-height: 1.5;
+	border-radius: 0.2rem;
+}
+.btn-lg {
+	padding: 1rem 1.5rem;
+	font-size: 1.25rem;
+	line-height: 1.5;
+	border-radius: 0.3rem;
+}
+
+.btn-block {
+	display: block;
+	width: 100%;
+
+	& + & {
+		margin-top: 0.5rem;
+	}
+}
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	&.btn-block {
+		width: 100%;
+	}
+}
+
+a.btn.disabled,
+fieldset[disabled] a.btn {
+	pointer-events: none;
+}
+
+.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	padding: 0.9rem 1.25rem;
+	font-size: 1rem;
+	line-height: 1.25;
+	border-radius: 0.25rem;
+}

@@ -1,0 +1,238 @@
+
+// Settings - Change these to "true" to include their styles, "false" to exclude
+// =============================================================================
+$use-media-gallery:	true !default; // Standard WP media gallery for Tri
+$use-blog-comments:	true !default; // Blog comments for Tri
+$use-contact-icons:	true !default; // Tri contact icons widget
+$use-sharebar:		true !default; // Tri Share page social links
+$use-widget-social:	true !default; // Tri Social profile icons
+$use-animations:	true !default; // Tri Animations
+$use-gravityforms:	true !default; // Gravity Forms styles
+$use-woocommerce:	true !default; // Additional WooCommerce Styles for Tri
+$use-magnificpopup:	true !default; // Magnific Popup styles
+$use-post-feed:		false !default; // Tri Post Grid with Filters
+$use-ie-helper:		true !default; // Internet Explorer Compatability styles
+
+
+// Colors - (Set to color value or 'transparent')
+// =============================================================================
+$primary-color:		#81c535 !default;
+$secondary-color:	#00a0ff !default;
+
+$heading-color:		inherit !default;
+
+$grey-color:		#595959 !default;
+$dark-color:		#111 !default;
+
+$link-color: 		#4267b2 !default;
+$link-hover-color:	contrast($link-color, 15%) !default;
+
+
+// Type
+// =============================================================================
+$font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-headings: inherit !default;
+$font-weight-headings: 600 !default;
+
+// Font Sizes
+$font-size-base:	1rem !default;
+$font-size-sm: $font-size-base * .875 !default;
+
+$font-h1:	$font-size-base * 2.5 !default;
+$font-h2:	$font-size-base * 2 !default;
+$font-h3:	$font-size-base * 1.75 !default;
+$font-h4:	$font-size-base * 1.5 !default;
+$font-h5:	$font-size-base * 1.25 !default;
+$font-h6:	$font-size-base * 1 !default;
+
+$line-height: 1.7 !default;
+
+$lead-font-size:   $font-size-base * 1.25 !default;
+$lead-font-weight: 300 !default;
+
+// HR
+$hr-color: rgba(black, 0.1) !default;
+
+
+// Header
+// =============================================================================
+$header-bg:		#fff !default; // Header background color
+$header-shadow: rgba(0,0,0,0.1) 0 1px 3px !default;
+
+// Main Menu - off-canvas (mobile)
+$mobile-max-width:			767px;
+$mobile-nav-btn-color:		#777 !default; // The button that opens the off-canvas menu
+
+$mobile-nav-bg:				#fff !default;
+$mobile-nav-color:			$dark-color !default;
+$mobile-nav-font-size:		0.9rem !default;
+$mobile-nav-anchor-padding: 12px 20px !default;
+$mobile-nav-width:			80% !default;
+$mobile-nav-max-width:		300px !default;
+$site-overlay:				rgba(0, 0, 0, 0.5) !default;
+
+// Main Menu - dropdown (larger than mobile)
+$nav-color:			contrast($header-bg, 90%) !default; // Main Menu items text color
+$nav-color-hover:	$primary-color !default; // Main Menu items text color
+$nav-sub-bg:		#fff !default; // Dropdown background
+$nav-sub-color:		contrast($nav-sub-bg, 90%) !default; // Dropdown color
+$nav-sub-shadow:	0 2px 5px 0 rgba(0, 0, 0, 0.1) !default; // Dropdown shadow
+$nav-anchor-padding: 8px 16px !default;
+
+$nav-full-width:	98% !default;
+$nav-search-bg:		#fff !default; // Search box container background
+$nav-search-icon:	$nav-color !default; // Search icon
+
+$breadcrumb-font-size:	0.9rem !default;
+$breadcrumb-color:		#767676 !default;
+
+// Grid
+$grid: (
+	0: 0,
+	1: 8.333333%,
+	2: 16.666667%,
+	3: 25%,
+	4: 33.333333%,
+	5: 41.666667%,
+	6: 50%,
+	7: 58.333333%,
+	8: 66.666667%,
+	9: 75%,
+	10: 83.333333%,
+	11: 91.666667%,
+	12: 100%
+) !default;
+$grid-padding: 15px !default;
+
+
+// Blog
+// =============================================================================
+// Post Content
+$entry-image-border:			1px solid #eee !default;
+
+// Post Meta Footer
+$entry-footer-border-top:		1px solid rgba(0,0,0,0.1) !default;
+$entry-footer-border-bottom:	$entry-footer-border-top;
+
+// Avatar
+$avatar-border:				1px solid rgba(0,0,0,0.1) !default;
+
+// Page Links
+$page-links-border:		1px solid #eee !default;
+$page-links-padding:	5px 10px !default;
+
+// Comments
+$comment-border-color:		#dfdfdf !default;
+$comment-border:			1px solid $comment-border-color !default;
+$comment-says-color:		#999 !default;
+
+// Page Numbers
+$page-numbers-border:	1px solid #ccc !default;
+$page-numbers-bg:		#fff !default;
+$page-numbers-padding:	12px 16px !default;
+
+
+// Post Grid Filter
+// =============================================================================
+$filter-grid_color: $dark-color;
+
+// Widgets
+// =============================================================================
+$widget-anchor-color:		#333 !default;
+
+// Contact details widget
+$contact-icons-color:		#000 !default;
+
+
+// Media
+// =============================================================================
+$captions-padding:	6px !default;
+$captions-bg:		#fff !default;
+$captions-shadow:	0 1px 1px rgba(0,0,0,0.2),inset 0 0 18px rgba(0,0,0,0.03) !default;
+$captions-color:	rgba(51, 51, 51, 0.7) !default;
+
+$img-thumbnail-padding: 0.25rem !default;
+$img-thumbnail-bg: #fff !default;
+$img-thumbnail-border: 1px solid #ddd !default;
+
+// Footer
+// =============================================================================
+$footer-bg:				#363839 !default;
+$footer-color:			contrast( $footer-bg ) !default;
+$footer-sub-bg:			#282a2b !default;
+$footer-sub-color:		contrast( $footer-sub-bg ) !default;
+
+// Forms
+// =============================================================================
+$input-color:				#666 !default; // Input text color
+$input-border-color:		rgba(0, 0, 0, 0.2) !default;
+$input-border-color-focus:	$primary-color !default;
+$input-font-size:			1rem !default;
+
+$form-label-color:	lighten($dark-color, 10%) !default;
+
+// Buttons
+// Primary
+$btn-bg: $primary-color !default;
+$btn-color: contrast($btn-bg, 100%) !default;
+$btn-hover-bg: darken($btn-bg, 10%);
+$btn-focus-shadow:	0 0 0 3px rgba(0, 123, 255, 0.25) !default;
+
+// Secondary
+// $btn-bg-secondary: #868e96 !default;
+// $btn-color-secondary: contrast($btn-bg-secondary, 100%) !default;
+// $btn-hover-bg-secondary: darken($btn-bg, 10%);
+
+$btn-color-outline: #fff !default;
+$btn-bg-outline: $btn-bg !default;
+
+
+// Media
+// =============================================================================
+$columns: (
+	1: 100%,
+	2: 50%,
+	3: 33.33%,
+	4: 25%,
+	5: 20%,
+	6: 16.66%
+) !default;
+
+
+// Animation delay effects
+$delays: (
+	1: 0.5s,
+	2: 0.7s,
+	3: 0.9s,
+	4: 1.1s
+) !default;
+
+
+// Utilities
+// =============================================================================
+$box-shadow: 0 8px 16px 0 rgba($dark-color, 0.10);
+
+$screen-reader-bg:		#f1f1f1 !default; // Screen reader background color
+$screen-reader-color:	#21759b !default; // Screen Reader text
+
+// Spacing
+$spacer: 1rem !default;
+$spacers: (
+	0: 0,
+	1: ($spacer * 0.25),
+	2: ($spacer * 0.5),
+	3: $spacer,
+	4: ($spacer * 1.5),
+	5: ($spacer * 3)
+) !default;
+
+$skip-link-bg:		#f1f1f1 !default;
+$skip-link-shadow:	0 0 1px 1px rgba(0, 0, 0, 0.2) !default;
+$skip-link-color:	#21759b !default;
+
+// Gravity Forms
+// =============================================================================
+$input-error:			#ca3c3c !default;
+
+$form-required-color:	#f00 !default;
+$form-muted-color:		#DEDEDE !default;

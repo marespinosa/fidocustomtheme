@@ -1,0 +1,46 @@
+@import "../mixins";
+@import "../variables";
+
+// Accordions Block
+.tri-accord {
+	border: 1px solid #eee;
+	background-color: #fff;
+	box-shadow: 3px 5px 20px #f1f1f1;
+}
+.accord-title {
+	display: block;
+	color: #595959;
+	font-size: 0.9rem;
+	padding: 1rem;
+	cursor: pointer;
+
+	&.is-active,
+	&:hover,
+	&:focus {
+		color: #333;
+	}
+
+	// The (+) icon
+	& .tricon {
+		width: 1.5rem;
+		opacity: 0.6;
+	}
+	& svg {
+		transition: all 0.2s ease-out;
+	}
+	// When active, rotate 45 degrees
+	&.is-active svg {
+		transform: rotate(45deg);
+	}
+	&:hover .tricon,
+	&.is-active .tricon {
+		fill: $primary-color;
+		opacity: 1;
+	}
+}
+// The content of the accordion dropdown
+.accord-body {
+	border-top: 1px solid #eee;
+	padding: 0.8rem 1rem;
+	font-size: 1rem;
+}

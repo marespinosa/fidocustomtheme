@@ -1,0 +1,164 @@
+// box-sizing + body defaults
+//-------------------------------
+html {
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
+	font-family: sans-serif;
+}
+@media (max-width: 767px) {
+	html {
+		font-size: $font-size-sm;
+	}
+}
+@media (min-width: 768px) {
+	html {
+		font-size: $font-size-base;
+	}
+}
+
+
+// Box sizing
+//-------------------------------
+*,
+*::before,
+*::after { // Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body {
+	font-family: $font-main;
+	font-size: $font-size-base;
+	line-height: $line-height;
+	color: $dark-color;
+}
+
+// Anchor Links
+//-------------------------------
+a {
+	color: $link-color;
+	text-decoration: none;
+	-webkit-text-decoration-skip: objects; // Remove gaps in links underline in iOS 8+ and Safari 8+.
+
+	&:hover {
+		color: $link-hover-color;
+		text-decoration: underline;
+	}
+}
+
+
+// Images
+//-------------------------------
+// Responsive images (ensure images don't scale beyond their parents)
+img {
+	vertical-align: middle;
+	max-width: 100%; // Set a maximum relative to the parent
+	height: auto; // Scale the height according to the width, otherwise you get stretching
+}
+figure {
+	max-width: 100%;
+}
+
+
+// Tables
+//-------------------------------
+.wp-block-table,
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.wp-block-table {
+	&.has-fixed-layout {
+		table-layout: fixed;
+	}
+
+	&.alignleft,
+	&.aligncenter,
+	&.alignright {
+		display: table;
+		width: auto;
+	}
+
+	&.is-style-stripes {
+		border-spacing: 0;
+		border-collapse: inherit;
+		background-color: transparent;
+		border-bottom: 1px solid #f3f4f5;
+
+		& tr:nth-child(odd) {
+			background-color: #f3f4f5;
+		}
+		& td {
+			border-color: transparent;
+		}
+	}
+}
+
+
+// Border Radius
+//-------------------------------
+.rounded { border-radius: 0.25rem !important; }
+.rounded-0 { border-radius: 0 !important; }
+.rounded-pill { border-radius: 50rem !important; }
+.rounded-circle { border-radius: 50% !important; }
+
+// Box Shadow
+//-------------------------------
+.box-shadow,
+.box-shadow-hover:hover {
+	box-shadow: $box-shadow;
+}
+
+// Make an element full screen height
+//-------------------------------
+.full-height {
+	align-items: stretch;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 100vh;
+}
+
+// Make an element centered vertically on full-height */
+.vertical-align-middle {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	justify-content: center;
+}
+
+
+// Make background image cover the background element
+//-------------------------------
+.bg-cover {
+	background-position: center;
+	background-size: cover;
+}
+
+
+// Grayscale
+.grayscale {
+	filter: grayscale(1);
+}
+
+// Horizontal menu
+//-------------------------------
+// Add this class to any <ul> to make the list a horizontal list
+.list-inline {
+	padding-left: 0;
+	list-style: none;
+
+	// list-inline list items
+	& li {
+		display: inline-block;
+	}
+	& li:not(:last-child) {
+		margin-right: 5px;
+	}
+}
+
+.list-unstyled {
+	padding-left: 0;
+	list-style: none
+}

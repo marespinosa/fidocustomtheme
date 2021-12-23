@@ -1,0 +1,29 @@
+/*!
+Theme Name: Tri Theme
+Theme URI: https://tri.web3.com.au
+Author: Web3 Brisbane
+Author URI: https://web3.com.au/
+Description: Tri Theme, a flexible responsive WordPress theme by Web3.
+Version: 2.1
+Text Domain: tri
+*/
+
+@import "mixins";
+@import "variables";
+@import "normalize";
+
+@import "type";
+@import "grid";
+@import "elements";
+@import "header";
+@import "content";
+@import "widgets";
+@import "media";
+@import "forms";
+@import "gravityforms";
+@import "footer";
+@import "woocommerce";
+@import "effects";
+@import "magnificpopup";
+@import "modules";
+@import "ie-compatibility";

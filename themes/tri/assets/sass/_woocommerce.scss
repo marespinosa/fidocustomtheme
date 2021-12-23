@@ -1,0 +1,125 @@
+// Woocommerce custom styles
+// Author: Web3 Brisbane
+// Author URI: http: //web3.com.au
+// Styles that override Woocommerce. Made for Tri
+
+@if $use-woocommerce == true {
+
+//--------------------------------------------------------------
+// # Global styles for all screen sizes
+//--------------------------------------------------------------
+.woocommerce {
+
+	// Single Product
+	&.single-product #content {
+		margin-top: 2rem;
+	}
+
+	// Sale badge
+	& .onsale {
+		box-sizing: content-box;
+	}
+
+	& div.product {
+
+		& div.images figure.woocommerce-product-gallery__wrapper {
+			margin: 0;
+			max-width: none !important;
+		}
+	}
+
+	// Checkout page
+	& .col2-set .col-1,
+	& .col2-set .col-2 {
+		flex: 0 0 100%;
+		max-width: 100%;
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+// Woocommerce Search box
+.woocommerce-product-search {
+	font-size: 0.85rem;
+	position: relative;
+
+	label {
+		display: block;
+	}
+
+	& input[type="submit"] {
+		top: 0;
+		right: 0;
+		float: right;
+		border: none;
+		width: 40px;
+		height: 100%;
+		text-indent: -100px;
+		overflow: hidden;
+		background: center/24px no-repeat !important;
+		@include tricon('search');
+		opacity: 0.4;
+		position: absolute;
+		padding: 10px;
+
+		// search submit btn hover
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+
+// Pagination, Cart
+.woocommerce {
+	nav.woocommerce-pagination ul li {
+		a,
+		span {
+			width: 4rem;
+			padding: 1rem;
+		}
+	}
+
+	&-page .cart .actions #coupon_code,
+	&-page #content .cart .actions #coupon_code,
+	.cart .actions #coupon_code {
+		height: 40px;
+	}
+}
+
+
+
+//--------------------------------------------------------------
+// # Tablet and larger (tablets, 768px and up)
+//--------------------------------------------------------------
+@media (min-width: 768px) {
+	.woocommerce {
+		& .comment-form-author,
+		& .comment-form-email,
+		& .comment-form-url {
+			width: 100%;
+		}
+
+		div.product div.woocommerce-product-gallery--columns-3 .flex-control-thumbs li {
+			width: 33.33%;
+		}
+
+		&-page .cart .actions #coupon_code,
+		&-page #content .cart .actions #coupon_code,
+		.cart .actions #coupon_code {
+			width: 157px;
+		}
+	}
+
+	&.woocommerce-page.woocommerce-active .related ul.products,
+	&.woocommerce-active .related ul.products {
+		&.columns-2 li.product {
+		    width: 48%;
+		}
+
+		&.columns-3 li.product {
+		    width: 30.75%;
+		}
+	}
+}
+
+} // End if use WooCommerce variable check

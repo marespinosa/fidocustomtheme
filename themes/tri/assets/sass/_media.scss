@@ -1,0 +1,152 @@
+// Make sure embeds and iframes fit their containers.
+embed,
+iframe,
+object,
+[class*="col-"] video,
+[class*="col-"] audio {
+	max-width: 100%;
+}
+
+// Make wordpress embeds fill the container
+.wp-embedded-content {
+	width: 100%;
+}
+
+// Image Style
+.img-thumbnail {
+	padding: $img-thumbnail-padding;
+	background-color: $img-thumbnail-bg;
+	border: $img-thumbnail-border;
+}
+
+.entry-content figure {
+	margin: 0;
+}
+
+//--------------------------------------------------------------
+// # Icon
+//--------------------------------------------------------------
+// Standard icon size
+.tricon {
+	display: inline-block;
+
+	&.highlight-color {
+		fill: $primary-color;
+	}
+
+	& svg {
+		width: 2rem;
+		height: 2rem;
+		vertical-align: middle;
+		overflow: visible;
+	}
+
+	&-sm svg {
+		width: 1.5rem;
+		height: 1.5rem;
+	}
+	&-lg svg {
+		width: 3rem;
+		height: 3rem;
+	}
+	&-xl svg {
+		width: 4rem;
+		height: 4rem;
+	}
+	&-xxl svg {
+		width: 5rem;
+		height: 5rem;
+	}
+
+	// Line circle around icon
+	&-circle svg {
+		padding: 0.5rem;
+		border-radius: 50%;
+		border: 2px solid $primary-color;
+		box-sizing: content-box;
+	}
+}
+
+
+//--------------------------------------------------------------
+// ## Captions
+//--------------------------------------------------------------
+.blocks-gallery-item {
+	display: inline-block;
+	margin: 0 auto 1.5rem;
+
+	img {
+		max-width: 100%;
+		padding: $captions-padding;
+		background-color: $captions-bg;
+		box-shadow: $captions-shadow;
+
+		img[class*="wp-image-"] {
+			display: block !important;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		& a {
+			display: block;
+		}
+	}
+}
+
+figcaption {
+	margin-bottom: 0.5em;
+	text-align: center;
+	font-style: italic;
+	font-size: 0.9rem;
+	padding: 0.5em 0;
+	color: $captions-color;
+}
+
+
+//--------------------------------------------------------------
+// ## Galleries
+//--------------------------------------------------------------
+@if $use-media-gallery == true {
+
+.wp-block-gallery {
+	margin-bottom: 1.6em;
+	margin-left: -0.8rem;
+	margin-right: -0.8rem;
+	padding: 0;
+}
+
+.blocks-gallery-item {
+	display: inline-block;
+	padding: 0.8rem;
+	margin: 0;
+	vertical-align: top;
+	list-style: none;
+
+	@media (max-width: 767px) {
+		width: 100%;
+	}
+
+	& a {
+		display: block;
+		text-align: center;
+	}
+	// Loops to enumerate the classes for gallery columns.
+	@media (min-width: 768px) {
+		@for $i from 1 through 6 {
+			.columns-#{$i} & {
+				width: map-get( $columns, $i );
+			}
+		}
+	}
+
+	& .attachment-thumbnail {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+} // End if use media-gallery variable check
+
+// Audio
+.wp-block-audio audio {
+	width: 100%;
+}

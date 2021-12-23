@@ -1,0 +1,29 @@
+@import "../mixins";
+@import "../variables";
+
+// Pricing Table block
+.pricing-table {
+	@media (min-width: 768px) {
+		.pricing-details {
+			transition: all .1s;
+		}
+
+		.pricing-features {
+			border-top: 1px solid #eee;
+		}
+
+		.box-shadow-hover {
+			box-shadow: 0 8px 16px 0 rgba(55, 58, 60, 0.08);
+			transition: all .4s;
+
+			&:hover {
+				box-shadow: 0 8px 16px 0 rgba(55, 58, 60, 0.1);
+
+				.pricing-details {
+					background-color: $primary-color;
+					color: #fff;
+				}
+			}
+		}
+	}
+}

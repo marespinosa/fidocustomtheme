@@ -1,0 +1,399 @@
+// Tri Enhancer shortcode styles
+// ----------------------------------------------------------------
+// >>> TABLE OF CONTENTS:
+// ----------------------------------------------------------------
+// ## Grid
+// ## Section
+// ## Icon
+// ## Icon Tile
+// ## Divider
+// ## Quote
+// ## Testimonial
+// ## Count Up
+// ## Banner
+// ## Tabs
+// ## List
+// ## Blog Posts
+// ## Google Maps
+// ## Modal Popup
+// ## Post Grid
+// ## Read More
+// ## Fluid Video
+
+//--------------------------------------------------------------
+// # Section
+//--------------------------------------------------------------
+.tri-bg-cover-fixed {
+	background: fixed center / cover no-repeat;
+}
+// Fix for mobile devices to scroll rather than not show at all
+@media (max-width: 767px) {
+	.tri-bg-cover-fixed {
+		background-attachment: scroll;
+	}
+}
+.tri-bg-cover-scroll {
+	background: center / cover no-repeat;
+}
+.tri-bg-top-left {
+	background: left top no-repeat;
+}
+.tri-bg-top {
+	background: top no-repeat;
+}
+.tri-bg-top-right {
+	background: right top no-repeat;
+}
+.tri-bg-left {
+	background: left no-repeat;
+}
+.tri-bg-center {
+	background: center no-repeat;
+}
+.tri-bg-right {
+	background: right no-repeat;
+}
+.tri-bg-bottom-left {
+	background: left bottom no-repeat;
+}
+.tri-bg-bottom {
+	background: bottom no-repeat;
+}
+.tri-bg-bottom-right {
+	background: right bottom no-repeat;
+}
+.tri-bg-repeat {
+	background-repeat: repeat;
+}
+.tri-bg-repeat-x {
+	background-repeat: repeat-x;
+}
+.tri-bg-repeat-y {
+	background-repeat: repeat-y;
+}
+.tri-section {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+
+	&.alignfull {
+		margin-left: calc(50% - 50vw);
+		margin-right: calc(50% - 50vw);
+		max-width: 100%;
+		width: auto;
+	}
+
+	@media (max-width: 767px) {
+		&.container-pt {
+			padding-top: 40px;
+		}
+		&.container-pb {
+			padding-bottom: 28px;
+		}
+	}
+	@media (min-width: 768px) {
+		&.container-pt {
+			padding-top: 80px;
+		}
+		&.container-pb {
+			padding-bottom: 56px;
+		}
+	}
+}
+
+@if $use-video-background == true {
+.video-background {
+	z-index: -100;
+	display: block;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+}
+} // END use video background
+
+//--------------------------------------------------------------
+// # Icon
+//--------------------------------------------------------------
+.flip-horizontal { transform: scale(-1, 1); }
+.flip-vertical { transform: scale(1, -1); }
+.rotate-180 { transform: rotate(180deg); }
+
+// Line circle around icon
+.icon-circle svg {
+	padding: 0.5rem;
+	border-radius: 50%;
+	border: 2px solid $highlight_color;
+	box-sizing: content-box;
+}
+
+
+//--------------------------------------------------------------
+// # Icon title
+//--------------------------------------------------------------
+@if $use-icon-tile == true {
+.icon-tile {
+	position: relative;
+	transition: all 0.3s;
+	padding: 15px 0;
+	overflow: hidden;
+
+	&:hover,
+	& svg,
+	& h3 {
+		transition: transform 0.2s;
+	}
+
+	& a {
+		outline: none;
+	}
+
+	& svg {
+		fill: #777;
+	}
+
+	&:hover {
+		background: $highlight_color;
+	}
+	&:hover svg {
+		transform: translateY(5px);
+		fill: #fff;
+	}
+
+	& h3 {
+		margin: 55px 0 0;
+		position: relative;
+		color: #777;
+
+		&:before {
+			content: '';
+			position: absolute;
+			width: 80px;
+			height: 3px;
+			left: 50%;
+			top: 7px;
+			margin: -35px 0 0 -40px;
+			transition: margin-top 0.2s;
+			background: #999;
+		}
+	}
+
+	&:hover h3 {
+		transform: translateY(-40px);
+		color: #fff;
+
+		&:before {
+			top: -3px;
+			margin-top: 40px;
+			background: #fff;
+		}
+	}
+
+	& p {
+		text-transform: uppercase;
+		font-size: 0.8em;
+		letter-spacing: 1px;
+		margin: 0;
+		transform: translateY(10px);
+		opacity: 0;
+		display: block;
+		transition: transform 0.3s, opacity 0.2s;
+		color: #fff;
+	}
+
+	&:hover p {
+		opacity: 1;
+		transform: translateY(-10px);
+	}
+
+	& .icon-more {
+		position: relative;
+		left: -5px;
+		transition: all 0.2s;
+		height: 2.8rem;
+	}
+
+	& p:hover .icon-more {
+		left: 0;
+	}
+}
+} // END use icon tile
+
+//--------------------------------------------------------------
+// # Divider
+//--------------------------------------------------------------
+@if $use-divider == true {
+.tri-divider {
+	height: 1px;
+	width: 100%;
+	clear: both;
+	border-bottom: 1px solid transparent;
+}
+} // END use divider
+
+//--------------------------------------------------------------
+// # Quote
+//--------------------------------------------------------------
+@if $use-quote == true {
+.tri-quote {
+	quotes: none;
+	font-style: italic;
+	font-weight: 400;
+	font-size: 1.25rem;
+	padding: 2rem;
+	padding: 0;
+	margin-bottom: 1rem;
+
+	.tri-quote-footer {
+		font-size: 80%;
+		color: #868e96;
+		display: block;
+		&::before {
+			content: "\2014 \00A0";
+		}
+	}
+}
+} // END use quote
+
+//--------------------------------------------------------------
+// # Testimonial
+//--------------------------------------------------------------
+@if $use-testimonial == true {
+.tri-testimonial {
+	margin-bottom: 1rem;
+
+	& .tri-testimonial-name {
+		margin-top: 1rem;
+		font-weight: 700;
+	}
+	& .tri-testimonial-position {
+		font-style: italic;
+	}
+}
+} // END use testimonial
+
+//--------------------------------------------------------------
+// # Count Up
+//--------------------------------------------------------------
+@if $use-count-up == true {
+.tri-count-up {
+	& .count-number {
+		font-size: 3rem;
+		font-weight: 300;
+	}
+	& .count-title {
+		font-size: 1rem;
+		font-weight: 500;
+	}
+}
+} // END countup
+
+
+//--------------------------------------------------------------
+// # Banner
+//--------------------------------------------------------------
+@if $use-banner == true {
+.tri-banner {
+	overflow: hidden;
+	position: relative;
+	transition: background-size 2s ease-in;
+
+	// The text on the banner
+	& .banner-text {
+		z-index: 2;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		color: #fff;
+		text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+		display: flex;
+	}
+}
+} // END use banners
+
+
+//--------------------------------------------------------------
+// # Tabs
+//--------------------------------------------------------------
+
+//--------------------------------------------------------------
+// # List
+//--------------------------------------------------------------
+@if $use-list-icons == true {
+.tri-list {
+
+	& ul {
+		list-style: none;
+		padding: 0;
+	}
+	& li {
+		padding-bottom: 0.5rem;
+	}
+	// The icon before the list
+	& li::before {
+		content: '';
+		height: 1.5rem;
+		width: 1.5rem;
+		display: inline-block;
+		background-repeat: no-repeat;
+		padding-right: 2rem;
+		background-position: center left;
+		vertical-align: middle;
+	}
+
+	// the icon background svg images
+	&.check li::before { background-image: url(#{$icondir}done.svg); }
+	&.cross li::before { background-image: url(#{$icondir}highlight_off.svg); }
+	&.plus li::before { background-image: url(#{$icondir}add_circle_outline.svg); }
+	&.minus li::before { background-image: url(#{$icondir}remove_circle_outline.svg); }
+	&.alert li::before { background-image: url(#{$icondir}error_outline.svg); }
+	&.question li::before { background-image: url(#{$icondir}help_outline.svg); }
+}
+} // END list icons
+
+//--------------------------------------------------------------
+// # Google Maps
+//--------------------------------------------------------------
+@if $use-google-maps == true {
+.tri-gmap {
+	max-width: 100%;
+}
+img[src*="gstatic.com/"],
+img[src*="googleapis.com/"] {
+	max-width: none;
+}
+}
+
+//--------------------------------------------------------------
+// # Read More
+//--------------------------------------------------------------
+@if $use-read-more == true {
+.read-more-content {
+	display: inline;
+}
+}
+
+//--------------------------------------------------------------
+// # Fluid Video
+//--------------------------------------------------------------
+@if $use-responsive-embed == true {
+.embed-responsive { // 16:9
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	clear: both;
+
+	// The iframe inside the container
+	& iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+} // END responsive embed

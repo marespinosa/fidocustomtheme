@@ -1,0 +1,168 @@
+/*!
+Theme Name: Tri Child
+Theme URI: https://tri.web3.com.au
+Description: Customisations to Tri theme
+Author: Web3 Brisbane Web Design
+Author URI: https://web3.com.au
+Template: tri
+Version: 1.0.0
+*/
+//------------------------------------------------------------------------------
+// Child theme variable overwrites
+// See: tri.web3.com.au/docs/#scss-variables
+//------------------------------------------------------------------------------
+
+// Colors
+$primary-color:		#0065F2;
+$primary-hover:		#015BD7;
+$secondary-color:	#2DCB48;
+$tertiary-color:	#FFCC00;
+
+$heading-color:		inherit;
+$body-color:		#373a3c;
+$link-color: 		$primary-color;
+
+$btn-bg:			$primary-color;
+$btn-bg-secondary:	$secondary-color;
+
+$footer-bg:			#363839;
+$footer-sub-bg:		#282a2b;
+
+// Type
+$font-main:			-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-headings:		inherit;
+
+// Load (optimised) Tri theme styles
+// Must be placed after child variables but before child theme modifications
+@import "assets/sass/tri-core";
+
+//------------------------------------------------------------------------------
+// Child theme modifications
+//------------------------------------------------------------------------------
+
+// Landing Page Block Patterns
+// Edit _forms.scss on parent, branch: buttons
+.btn-block .wp-block-button__link {
+	display: block;
+	width: 100%;
+    background-color: $btn-bg;
+    color: #fff;
+
+	& + & {
+		margin-top: 0.5rem;
+	}
+}
+
+.horizontal-form {
+    display: flex;
+
+    .gform_button {
+	    flex-basis: 100%;
+	    margin-left: 20px;
+	    height: 55px;
+	}
+
+	.gform_footer {
+	    flex-basis: 50%;
+	    display: flex;
+	}
+}
+
+// Spacing
+.entry-content {
+	h1, h2, h3, h4, h5, h6 {
+		margin-bottom: 1rem;
+	}
+}
+
+.entry-content > .wp-block-group {
+	margin: 40px auto;
+
+	@media (min-width: 1200px) {
+		margin: 145px auto;
+
+		&:first-child {
+			margin-top: 80px;
+		}
+
+		&:last-child {
+			margin-bottom: 80px;
+		}
+	}
+}
+
+.card {
+	box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1), 0px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+// Colors
+.has-primary-background-color {
+	background-color: $primary-color;
+}
+
+.has-secondary-background-color {
+	background-color: $secondary-color;
+}
+
+.has-tertiary-background-color {
+	background-color: $tertiary-color;
+}
+
+.wp-block-button__link {
+	color: #fff;
+
+	&:hover {
+		color: #fff;
+	}
+
+	&.has-primary-background-color {
+		&:hover {
+			background-color: darken($primary-color, 10%);
+		}
+	}
+
+	&.has-secondary-background-color {
+		&:hover {
+			background-color: darken($secondary-color, 10%);
+		}
+	}
+
+	&.has-tertiary-background-color {
+		&:hover {
+			background-color: darken($tertiary-color, 10%);
+		}
+	}
+}
+
+// Columns
+.wp-block-columns,
+.wp-block-column {
+	@media (min-width: 768px) {
+	    margin-bottom: 0;
+	}
+}
+
+.wp-block-column.ml-0 {
+	margin-left: 0;
+}
+
+.wp-block-buttons .wp-block-button {
+    margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+	.wp-block-media-text .wp-block-media-text__media {
+		margin-bottom: 20px;
+	}
+}
+
+.line-height-1 {
+	line-height: 1;
+}
+
+@media (max-width: 767px) {
+	.flex-children-25 .wp-block-column {
+	    flex-basis: 25%!important;
+	    flex-grow: unset;
+	}
+}

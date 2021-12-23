@@ -1,0 +1,27 @@
+@media only screen and (min-width: 768px) {
+
+	.editor-writing-flow {
+		// max-width: 80%;
+		// margin: 0 10%;
+	}
+
+	/* Main column width */
+	.wp-block {
+	    max-width: 1110px;
+	}
+
+	.edit-post-text-editor {
+    	max-width: 1000px;
+	}
+
+	/* Width of "wide" blocks */
+	.wp-block[data-align="wide"] {
+	    max-width: 1140px;
+	}
+
+	/* Width of "full-wide" blocks */
+	.wp-block[data-align="full"] {
+	    max-width: none;
+	}
+
+}

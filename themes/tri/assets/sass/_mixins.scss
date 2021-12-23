@@ -1,0 +1,19 @@
+// --------------------------------------------------------------
+// Tri Theme Mixins
+// --------------------------------------------------------------
+
+// Icon directory location
+$icondir: 'assets/img/material/' !default;
+// Include a tri icon
+@mixin tricon($icon) {
+	background-image: url(#{$icondir}#{$icon}.svg) !important;
+}
+
+// Function to return a contrasting color of a color
+@function contrast($color, $percent: 70%) {
+	@if ( lightness($color) > 50% ) {
+		@return darken($color, $percent);
+	} @else {
+		@return lighten($color, $percent);
+	}
+}

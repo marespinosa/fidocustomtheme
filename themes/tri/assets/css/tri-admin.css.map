@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAKC,6BAAmB,CAClB,SAAS,CAAE,GAAG,CACd,MAAM,CAAE,IAAI,CAEb,qBAAW,CAAE,SAAS,CAAE,GAAG,CAC3B,mBAAS,CAAE,SAAS,CAAE,KAAK",
+"sources": ["../sass/tri-admin.scss"],
+"names": [],
+"file": "tri-admin.css"
+}
